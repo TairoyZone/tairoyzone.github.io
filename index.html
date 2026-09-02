@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Shivaliva Shanty</title>
+<meta name="description" content="A sky-pirate puzzle adventure where the islanders remember what you did and talk about it. Six mini-games, one island, free on itch for Windows."
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://shivalivaleveling.com/">
+<meta property="og:title" content="Shivaliva Shanty">
+<meta property="og:description" content="A sky-pirate puzzle adventure where the islanders remember what you did and talk about it. Six mini-games, one island, free on itch for Windows.">
+<meta property="og:image" content="https://shivalivaleveling.com/assets/shot_1_skirmish_duel.png">
+<meta property="og:image:width" content="1280">
+<meta property="og:image:height" content="720">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@trojanatoplat">>
+<meta name="theme-color" content="#08101A">
+<meta property="og:title" content="Shivaliva Shanty">
+<meta property="og:description" content="A sky-pirate puzzle adventure where the islanders remember what you did and talk about it. Six mini-games, one island, free on itch for Windows.">
+<meta property="og:type" content="website">
+<link rel="icon" href="assets/icon_32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="assets/icon_256.png" sizes="256x256" type="image/png">
+<link rel="apple-touch-icon" href="assets/icon_256.png">
+<link rel="preload" href="assets/fonts/DejaVuSans.ttf" as="font" type="font/ttf" crossorigin>
+<style>
+/* The game's one face, self-hosted (copied from assets/fonts/DejaVuSans.ttf). Verdana stays as the fallback. */
+@font-face{font-family:'DejaVu Sans';src:url(assets/fonts/DejaVuSans.ttf) format('truetype');font-weight:400;font-style:normal;font-display:swap}
+
+/* Tokens: generated from tools/palette/first_light.json (scheme first_light) + ui_style.gd. Do not hand-add colours.
+   Every derived tint below is a color-mix of a token, never a typed hex. */
+:root{
+  --bg:#08101A; --bg-void:#02060D; --panel:#121B27; --card:#202A36; --slot:#050C14; --slate:#2B343E;
+  --panel-glass:rgba(18,27,39,0.88); --panel-glass-deep:rgba(8,16,26,0.92); --void-scrim:rgba(2,6,13,0.92); --chip:rgba(18,27,39,0.72);
+  --border:#B8A17A; --border-hair:rgba(184,161,122,0.45); --border-card:rgba(184,161,122,0.75); --border-chip:rgba(184,161,122,0.22);
+  --accent:#FFC845; --accent-glow:rgba(255,200,69,0.34); --accent-wash-hover:rgba(255,200,69,0.10); --accent-wash-focus:rgba(255,200,69,0.14);
+  --text-glow:0 0 4px rgba(255,200,69,0.5);
+  --signal-azure:#76D9FF; --halo-ink:#040E1A;
+  --text:#EFE7D8; --text-muted:#AAA498; --text-caption:#C6BDA8;
+  --positive:#61CB7C; --caution:#F18426;
+  --sky-shadow:#09245B; --plum-shadow:#37003C;
+  --shadow-soft:0 3px 14px rgba(0,0,0,0.42); --shadow-press:inset 0 2px 4px rgba(0,0,0,0.42);
+  --card-hover:color-mix(in srgb,var(--card),white 10%); --card-press:color-mix(in srgb,var(--card),black 12%);
+  --text-hover:color-mix(in srgb,var(--text),white 18%); --accent-hover:color-mix(in srgb,var(--accent),white 20%);
+  --font-ui:'DejaVu Sans','Bitstream Vera Sans',Verdana,Geneva,sans-serif;
+  --fs-caption:12px; --fs-small:14px; --fs-body:18px; --fs-title:22px; --fs-heading:28px; --fs-display:36px; --fs-hero:48px; --fs-small-caps:13px; --fs-glyph:10px;
+  --radius-xs:4px; --radius-sm:8px; --radius-pill:999px;
+  --sp-xs:4px; --sp-sm:8px; --sp-md:12px; --sp-lg:16px; --sp-xl:24px; --sp-xxl:32px;
+  --dur-instant:0.10s; --dur-fast:0.15s; --dur-exit:0.20s; --dur-enter:0.28s;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{background:var(--bg);color-scheme:dark}
+body{margin:0;background:var(--bg);color:var(--text);font:400 var(--fs-body)/1.55 var(--font-ui);overflow-x:hidden;-webkit-font-smoothing:antialiased}
+img,video{display:block;max-width:100%;height:auto}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px}
+a:focus-visible,button:focus-visible{outline:4px solid var(--accent);outline-offset:2px;border-radius:var(--radius-sm);background:var(--accent-wash-focus)}
+h1,h2,h3,p,ul,figure{margin:0;font-weight:400}
+ul{padding:0;list-style:none}
+.wrap{width:100%;max-width:1120px;margin:0 auto;padding:0 var(--sp-lg)}
+section{padding:var(--sp-xxl) 0}
+@media(min-width:900px){section{padding:calc(var(--sp-xl) * 2) 0}}
+
+/* Label voice (the HUD chip small caps) */
+.label{display:inline-block;font-size:var(--fs-small-caps);letter-spacing:2px;text-transform:uppercase;color:var(--text-caption);padding-bottom:var(--sp-xs);border-bottom:1px solid var(--accent);margin-bottom:var(--sp-md)}
+.label::before{content:"\25C6";color:var(--accent);font-size:var(--fs-glyph);margin-right:var(--sp-sm);vertical-align:1px}
+h2{font-size:var(--fs-heading);line-height:1.2;color:var(--accent);text-shadow:var(--text-glow)}
+h3{font-size:var(--fs-title);line-height:1.3;color:var(--text)}
+.muted{color:var(--text-muted);font-size:var(--fs-small)}
+.lead{max-width:62ch}
+
+/* Buttons */
+.btn{display:inline-block;font:inherit;font-size:var(--fs-body);line-height:1.2;padding:var(--sp-md) var(--sp-xl);border-radius:var(--radius-xs);border:1px solid var(--border-hair);background:var(--card);color:var(--text);cursor:pointer;text-align:center;transition:background var(--dur-instant),border-color var(--dur-instant),color var(--dur-instant),box-shadow var(--dur-fast)}
+.btn:hover{text-decoration:none;background:var(--card-hover);border:2px solid var(--accent);padding:calc(var(--sp-md) - 1px) calc(var(--sp-xl) - 1px);color:var(--text-hover)}
+.btn:active{background:var(--card-press);box-shadow:var(--shadow-press)}
+.btn-primary{color:var(--accent);border:1px solid var(--accent);box-shadow:0 0 12px var(--accent-glow)}
+.btn-primary:hover{color:var(--accent-hover);background:var(--card-hover);box-shadow:0 0 12px var(--accent-glow)}
+.btn-primary:active{box-shadow:var(--shadow-press),0 0 12px var(--accent-glow)}
+.cta-row{display:flex;flex-wrap:wrap;gap:var(--sp-md);align-items:center}
+
+/* Panes */
+.pane{background:var(--panel);border:1px solid var(--border-hair);border-radius:var(--radius-sm);box-shadow:var(--shadow-soft)}
+.card{background:var(--card);border:1px solid var(--border-card);border-radius:var(--radius-xs);padding:var(--sp-lg)}
+.sep{height:1px;background:var(--border-hair);border:0;margin:0}
+
+/* 1. Hero (flat --bg behind the wordmark; the wordmark is measured to hold on night grounds) */
+.hero{padding:var(--sp-xxl) 0 var(--sp-xl)}
+.wordmark{width:min(100%,560px);margin:0 auto;aspect-ratio:620/268;overflow:hidden}
+.wordmark img{width:193.548%;max-width:none;margin-left:-48.71%;margin-top:-2.9032%}
+.headline{text-align:center;font-size:var(--fs-display);line-height:1.15;color:var(--accent);text-shadow:var(--text-glow);margin-top:var(--sp-xl)}
+.sub{text-align:center;font-size:var(--fs-title);line-height:1.4;color:var(--text);max-width:34ch;margin:var(--sp-md) auto 0}
+@media(min-width:900px){.headline{font-size:var(--fs-hero)}.sub{max-width:44ch}}
+.hero .cta-row{justify-content:center;margin-top:var(--sp-lg)}
+@media(max-width:479px){.hero .cta-row .btn{flex:1 1 100%}}
+.clip{position:relative;margin:var(--sp-xl) auto 0;max-width:960px;aspect-ratio:16/9;max-height:min(540px,60vh);background:var(--slot);border:1px solid var(--border-hair);border-radius:var(--radius-sm);overflow:hidden;box-shadow:var(--shadow-soft)}
+.clip video,.clip .still{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.clip .still{display:none}
+@media(prefers-reduced-motion:reduce){.clip video{display:none}.clip .still{display:block}}
+.tiles{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:var(--sp-md);max-width:960px;margin:var(--sp-xl) auto 0}
+.tile{background:var(--card);border:1px solid var(--border-card);border-radius:var(--radius-xs);overflow:hidden;transition:border-color var(--dur-instant),box-shadow var(--dur-instant)}
+.tile:hover{border-color:var(--accent);box-shadow:inset 0 0 0 1px var(--accent)}
+.tile img,.tile video{width:100%;aspect-ratio:16/9;object-fit:cover}
+.tile figcaption{font-size:var(--fs-small-caps);letter-spacing:2px;text-transform:uppercase;color:var(--text-caption);padding:var(--sp-sm) var(--sp-md);border-top:1px solid var(--border-chip);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.tile figcaption::before{content:"\25C6";color:var(--accent);font-size:var(--fs-glyph);margin-right:var(--sp-sm);vertical-align:1px}
+@media(max-width:479px){.tile figcaption{letter-spacing:1px;white-space:normal}}
+
+/* 2. Talk back */
+.proof{display:grid;gap:var(--sp-lg);margin-top:var(--sp-xl)}
+@media(min-width:800px){.proof{grid-template-columns:1fr 1fr}}
+.proof figure{background:var(--panel);border:1px solid var(--border-hair);border-radius:var(--radius-sm);overflow:hidden;box-shadow:var(--shadow-soft)}
+.proof img,.proof video{width:100%;aspect-ratio:16/9;object-fit:cover}
+.proof figcaption{padding:var(--sp-sm) var(--sp-md);font-size:var(--fs-small);color:var(--text-muted);border-top:1px solid var(--border-chip)}
+.moments{display:grid;gap:var(--sp-md);margin-top:var(--sp-xl)}
+@media(min-width:800px){.moments{grid-template-columns:repeat(3,1fr)}}
+.moments h3{color:var(--text);font-size:var(--fs-title);margin-bottom:var(--sp-sm)}
+.quiet{margin-top:var(--sp-xl);font-size:var(--fs-small);color:var(--text-muted)}
+.quiet::before{content:"\25B2";color:var(--caution);margin-right:var(--sp-sm);font-size:var(--fs-glyph)}
+
+/* 3. Earn your passage */
+.loop-tiles{display:grid;gap:var(--sp-md);margin-top:var(--sp-xl)}
+@media(min-width:800px){.loop-tiles{grid-template-columns:repeat(3,1fr)}}
+.loop-tiles figure{background:var(--card);border:1px solid var(--border-card);border-radius:var(--radius-xs);overflow:hidden}
+.loop-tiles img,.loop-tiles video{width:100%;aspect-ratio:16/9;object-fit:cover}
+.loop-tiles figcaption{padding:var(--sp-md)}
+.loop-tiles .t{color:var(--text);font-size:var(--fs-body);display:block;margin-bottom:var(--sp-xs)}
+.loop-tiles .b{font-size:var(--fs-small);color:var(--text-muted)}
+.features{display:grid;gap:var(--sp-md);margin-top:var(--sp-xl)}
+@media(min-width:640px){.features{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:960px){.features{grid-template-columns:repeat(3,1fr)}}
+.features li{background:var(--panel);border:1px solid var(--border-hair);border-radius:var(--radius-xs);padding:var(--sp-md) var(--sp-lg)}
+.features h3{font-size:var(--fs-body);color:var(--text);margin-bottom:var(--sp-xs)}
+.features h3::before{content:"\25C6";color:var(--accent);font-size:var(--fs-glyph);margin-right:var(--sp-sm);vertical-align:2px}
+.features p{font-size:var(--fs-small);color:var(--text-muted)}
+
+/* 4. Screenshots */
+.shots{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:var(--sp-md);margin-top:var(--sp-xl)}
+@media(min-width:640px){.shots{grid-template-columns:repeat(auto-fill,minmax(260px,1fr))}}
+.shot{display:block;border:1px solid var(--border-card);border-radius:var(--radius-xs);overflow:hidden;background:var(--card);transition:border-color var(--dur-instant),box-shadow var(--dur-instant)}
+.shot:hover{border-color:var(--accent);box-shadow:inset 0 0 0 1px var(--accent);text-decoration:none}
+.shot img{width:100%;aspect-ratio:16/9;object-fit:cover}
+.lightbox[hidden]{display:none}
+.lightbox{position:fixed;inset:0;z-index:50;background:var(--void-scrim);display:flex;align-items:center;justify-content:center;padding:var(--sp-lg);cursor:zoom-out}
+.lightbox figure{max-width:min(96vw,1280px);max-height:92vh;display:flex;flex-direction:column;gap:var(--sp-sm)}
+.lightbox img{max-height:82vh;width:auto;max-width:100%;object-fit:contain;border:1px solid var(--border-hair);border-radius:var(--radius-xs);background:var(--slot)}
+.lightbox figcaption{font-size:var(--fs-small);color:var(--text-muted);text-align:center}
+.lightbox .close{position:absolute;top:var(--sp-lg);right:var(--sp-lg);font:inherit;background:none;border:0;color:var(--text-muted);font-size:var(--fs-heading);line-height:1;cursor:pointer;padding:var(--sp-sm)}
+.lightbox .close:hover{color:var(--text)}
+body.lb-open{overflow:hidden}
+
+/* 5. Roadmap */
+.road{display:grid;gap:var(--sp-md);margin-top:var(--sp-xl)}
+.road li{display:grid;grid-template-columns:96px 1fr;gap:var(--sp-lg);align-items:start;padding:var(--sp-lg);background:var(--panel);border:1px solid var(--border-hair);border-radius:var(--radius-xs)}
+.road .when{font-size:var(--fs-small-caps);letter-spacing:2px;text-transform:uppercase;color:var(--accent);padding-top:var(--sp-xs)}
+.road .now .when::before{content:"\2713";color:var(--positive);margin-right:var(--sp-sm)}
+.road p{color:var(--text)}
+.honest{margin-top:var(--sp-lg);font-size:var(--fs-small);color:var(--text-muted)}
+.honest::before{content:"\25B2";color:var(--caution);margin-right:var(--sp-sm);font-size:var(--fs-glyph)}
+
+/* 6. Get it */
+.getit .pane{padding:var(--sp-xl);display:grid;gap:var(--sp-lg)}
+.facts{display:flex;flex-wrap:wrap;gap:var(--sp-sm)}
+.chip{display:inline-block;background:var(--card);border:1px solid var(--border-card);border-radius:var(--radius-xs);padding:var(--sp-xs) var(--sp-md);font-size:var(--fs-small-caps);letter-spacing:2px;text-transform:uppercase;color:var(--text-caption)}
+.chip b{font-weight:400;color:var(--text);letter-spacing:0;text-transform:none;font-size:var(--fs-small);margin-left:var(--sp-sm)}
+
+/* 7. Footer */
+footer{padding:var(--sp-xxl) 0 var(--sp-xxl);border-top:1px solid var(--border-hair);font-size:var(--fs-small);color:var(--text-muted)}
+.foot{display:grid;gap:var(--sp-xl)}
+@media(min-width:800px){.foot{grid-template-columns:1.2fr 1fr}}
+.foot-links{display:flex;flex-wrap:wrap;gap:var(--sp-sm) var(--sp-xl);margin-bottom:var(--sp-lg)}
+.factsheet{background:var(--panel);border:1px solid var(--border-hair);border-radius:var(--radius-xs);padding:var(--sp-lg)}
+.factsheet dl{display:grid;grid-template-columns:auto 1fr;gap:var(--sp-xs) var(--sp-lg);margin:0}
+.factsheet dt{font-size:var(--fs-small-caps);letter-spacing:2px;text-transform:uppercase;color:var(--text-caption)}
+.factsheet dd{margin:0;color:var(--text)}
+.credits p{margin-top:var(--sp-sm)}
+.sig{margin-top:var(--sp-lg);color:var(--text)}
+</style>
+</head>
+<body>
+
+<!-- 1. HERO -->
+<header class="hero">
+  <div class="wrap">
+    <h1 class="wordmark"><img src="assets/wordmark_1200.png" alt="Shivaliva Shanty" width="1200" height="350"></h1>
+    <p class="headline">The islanders talk back.</p>
+    <p class="sub">They remember what you did, and the whole island hears about it.</p>
+
+    <div class="cta-row">
+      <a class="btn btn-primary" href="https://tairoyzone.itch.io/shivaliva-shanty">Download free on itch</a>
+      <a class="btn" href="https://tairoyzone.itch.io/shivaliva-shanty/devlog">Read the devlog</a>
+    </div>
+
+    <div class="clip">
+      <video autoplay muted loop playsinline preload="metadata" poster="assets/clip_5_meet_poster.jpg" width="960" height="540" aria-label="Six seconds of the island: walking into the tavern and up to an islander to start a conversation">
+        <source src="assets/clip_5_meet.mp4" type="video/mp4">
+      </video>
+      <img class="still" src="assets/clip_5_meet_poster.jpg" alt="The tavern on Cradle Rock: you in the middle of the floor, islanders at the bar and by the fire with their names and moods over their heads" width="960" height="540">
+    </div>
+
+    <ul class="tiles" aria-label="The six mini-games">
+      <li><figure class="tile"><video class="loop" autoplay muted loop playsinline preload="metadata" poster="assets/gif_1_duel_poster.jpg" width="640" height="360" aria-label="Skirmish: a falling-block duel against an islander, lines clearing and garbage rising"><source src="assets/gif_1_duel.mp4" type="video/mp4"></video><figcaption>Skirmish</figcaption></figure></li>
+      <li><figure class="tile"><img src="assets/shot_3_poker_table_640.jpg" alt="Poker: the inn's parlor table with islanders seated round it and cards dealt" width="640" height="360" loading="lazy"><figcaption>Poker</figcaption></figure></li>
+      <li><figure class="tile"><img src="assets/shot_8_coin_drop_640.jpg" alt="Coin Drop: a coin bouncing down the pegs of the board, head to head against an islander" width="640" height="360" loading="lazy"><figcaption>Coin Drop</figcaption></figure></li>
+      <li><figure class="tile"><img src="assets/shot_4_mining_board_640.jpg" alt="Mining: a grid of rock to rotate and drop free for ore" width="640" height="360" loading="lazy"><figcaption>Mining</figcaption></figure></li>
+      <li><figure class="tile"><img src="assets/shot_9_lumberjacking_640.jpg" alt="Lumberjacking: stacking the grove's timber into the frame without waste" width="640" height="360" loading="lazy"><figcaption>Lumberjacking</figcaption></figure></li>
+      <li><figure class="tile"><img src="assets/shot_10_dish_duty_640.jpg" alt="Dish Duty: a plate in a sink of suds with three muck spots to scrub, a streak of 44 and a rack of clean plates drying" width="640" height="360" loading="lazy"><figcaption>Dish Duty</figcaption></figure></li>
+    </ul>
+  </div>
+</header>
+
+<main>
+
+<!-- 2. THE ISLANDERS TALK BACK -->
+<section id="talk">
+  <div class="wrap">
+    <span class="label">The islanders talk back</span>
+    <h2>They remember. They gossip. They say no.</h2>
+
+    <div class="proof">
+      <figure>
+        <video class="loop" autoplay muted loop playsinline preload="metadata" poster="assets/gif_5_table_talk_poster.jpg" width="640" height="360" aria-label="Table talk at the inn: an islander answering you in their own words about the game in front of them"><source src="assets/gif_5_table_talk.mp4" type="video/mp4"></video>
+        <figcaption>A word across the table, in their own voice.</figcaption>
+      </figure>
+      <figure>
+        <img src="assets/shot_5_wanted_job_640.jpg" alt="A Wanted: Lumberjacks notice at the market. Cogwise Fettle wants you to show you can swing before he gives you the job" width="640" height="360" loading="lazy">
+        <figcaption>Fettle will not hire a stranger. Beat him first.</figcaption>
+      </figure>
+    </div>
+
+    <ul class="moments">
+      <li class="card">
+        <h3>Ask Bralo what the word is tonight</h3>
+        <p>He tells you about the room you are both standing in: who just won at the gem table, who is hiring at the forge, who has been spinning tall tales by the fire all evening.</p>
+      </li>
+      <li class="card">
+        <h3>Win at the gym, and the tavern already knows</h3>
+        <p>Beat someone in a friendly bout at the Cradle Gym and by the time you walk into the inn the whole cast has heard. Lose, and that goes round too.</p>
+      </li>
+      <li class="card">
+        <h3>Ask anyone to walk with you</h3>
+        <p>They weigh how much they like you, whether they are busy, and how far off you are. Then they fall in beside you, or tell you no and why.</p>
+      </li>
+    </ul>
+
+    <p class="quiet">Conversations need a live internet connection. Everything else in the game plays offline.</p>
+
+    <div class="cta-row" style="margin-top:var(--sp-xl)">
+      <a class="btn btn-primary" href="https://tairoyzone.itch.io/shivaliva-shanty">Download free on itch</a>
+    </div>
+  </div>
+</section>
+
+<hr class="sep">
+
+<!-- 3. EARN YOUR PASSAGE -->
+<section id="passage">
+  <div class="wrap">
+    <span class="label">How to play</span>
+    <h2>Earn your passage</h2>
+    <p class="lead" style="margin-top:var(--sp-lg)">You arrive on Cradle Rock as nobody. Take jobs that are each their own mini-game, play the inn's tables, climb the five-rung gym ladder, then face the beasts of the Labyrinth one at a time. The demo ends the day you buy your way off the island.</p>
+
+    <div class="loop-tiles">
+      <figure>
+        <video class="loop" autoplay muted loop playsinline preload="metadata" poster="assets/gif_2_ordeal_poster.jpg" width="640" height="360" aria-label="The Labyrinth Ordeal: a bout against one of the beasts waiting in the maze"><source src="assets/gif_2_ordeal.mp4" type="video/mp4"></video>
+        <figcaption><span class="t">The ladder, then the Labyrinth</span><span class="b">Hollow Sable runs the ladder at the Cradle Gym and Mossy Senna patches you up after. When you have topped it, the Labyrinth gate opens and the beasts are waiting on the far side, one at a time.</span></figcaption>
+      </figure>
+      <figure>
+        <video class="loop" autoplay muted loop playsinline preload="metadata" poster="assets/gif_4_create_hero_poster.jpg" width="640" height="360" aria-label="Create your hero: cycling through faces, haircuts and beards on the character stand"><source src="assets/gif_4_create_hero.mp4" type="video/mp4"></video>
+        <figcaption><span class="t">Create your hero</span><span class="b">Cycle faces, hair and beards at the stand until the one looking back is you. Clothes come later, from the outfitter, with gold you earned.</span></figcaption>
+      </figure>
+      <figure>
+        <img src="assets/shot_6_outfitter_640.jpg" alt="The Outfitter window: shirts and vests with prices in gold, a Steel-Blue dye swatch selected" width="640" height="360" loading="lazy">
+        <figcaption><span class="t">The outfitter</span><span class="b">Dye it, wear it, get talked about.</span></figcaption>
+      </figure>
+    </div>
+
+    <ul class="features" aria-label="What is in the game">
+      <li><h3>Six mini-games</h3><p>Poker, Coin Drop, Skirmish, Mining, Lumberjacking, Dish Duty. Every job on the island is its own game.</p></li>
+      <li><h3>The Cradle Gym ladder</h3><p>Five friendly bouts, easiest first. Beat them all and you are Gym Champion.</p></li>
+      <li><h3>The Labyrinth Ordeal</h3><p>Five beasts, one at a time, up to the Labyrinth King. Lose, and you wake at the gym with the healer.</p></li>
+      <li><h3>Create your hero</h3><p>23 faces, 38 haircuts, 18 beards. Start in plain clothes and buy the rest.</p></li>
+      <li><h3>One currency, earned</h3><p>Gold only. It never decays, and you cannot buy it.</p></li>
+      <li><h3>Hearties and rivals</h3><p>Rapport runs from Despised to Confidant. Earn it and they act like it, in what they say and what they will do for you.</p></li>
+    </ul>
+  </div>
+</section>
+
+<hr class="sep">
+
+<!-- 4. SCREENSHOTS (grid shows the 640px JPEG; the link opens the full 1280x720 PNG in the lightbox) -->
+<section id="screenshots">
+  <div class="wrap">
+    <span class="label">Screenshots</span>
+    <h2>On the rock</h2>
+    <ul class="shots">
+      <li><a class="shot" href="assets/shot_1_skirmish_duel.png"><img src="assets/shot_1_skirmish_duel_640.jpg" alt="A Skirmish duel on a sunset deck: your falling-block board on the left, Hollow Sable's on the right, both fighters standing beside their boards" width="640" height="360" loading="lazy"></a></li>
+      <li><a class="shot" href="assets/shot_3_poker_table.png"><img src="assets/shot_3_poker_table_640.jpg" alt="The inn's poker table, islanders seated round it, a hand in play" width="640" height="360" loading="lazy"></a></li>
+      <li><a class="shot" href="assets/shot_8_coin_drop.png"><img src="assets/shot_8_coin_drop_640.jpg" alt="Coin Drop: a coin working its way down the pegs, scores for you and your rival above the board" width="640" height="360" loading="lazy"></a></li>
+      <li><a class="shot" href="assets/shot_4_mining_board.png"><img src="assets/shot_4_mining_board_640.jpg" alt="The Mining board: a grid of rock chunks to rotate and drop free" width="640" height="360" loading="lazy"></a></li>
+      <li><a class="shot" href="assets/shot_9_lumberjacking.png"><img src="assets/shot_9_lumberjacking_640.jpg" alt="Lumberjacking: timber pieces being stacked into the frame at the grove" width="640" height="360" loading="lazy"></a></li>
+      <li><a class="shot" href="assets/shot_10_dish_duty.png"><img src="assets/shot_10_dish_duty_640.jpg" alt="Dish Duty: a plate in a sink of suds with three muck spots to scrub, a hot water gauge, a streak of 44 and a rack of clean plates" width="640" height="360" loading="lazy"></a></li>
+      <li><a class="shot" href="assets/shot_7_create_hero.png"><img src="assets/shot_7_create_hero_640.jpg" alt="Create your hero: the character stand with face, hair and beard pickers" width="640" height="360" loading="lazy"></a></li>
+      <li><a class="shot" href="assets/shot_6_outfitter.png"><img src="assets/shot_6_outfitter_640.jpg" alt="The Outfitter window: shirts and vests with prices in gold, a Steel-Blue dye swatch selected" width="640" height="360" loading="lazy"></a></li>
+      <li><a class="shot" href="assets/shot_5_wanted_job.png"><img src="assets/shot_5_wanted_job_640.jpg" alt="A Wanted: Lumberjacks notice at the market. Cogwise Fettle wants you to show you can swing before he gives you the job, one gold per wood delivered" width="640" height="360" loading="lazy"></a></li>
+    </ul>
+  </div>
+</section>
+
+<hr class="sep">
+
+<!-- 5. WHERE IT IS GOING -->
+<section id="roadmap">
+  <div class="wrap">
+    <span class="label">Where it is going</span>
+    <h2>The roadmap, plainly</h2>
+    <ul class="road">
+      <li class="now"><span class="when">Now</span><p>Cradle Rock, one island, fully dressed, playable today.</p></li>
+      <li><span class="when">Next</span><p>Built, not in the demo yet: voyages, a crew, your own ship, mending the hull mid-flight.</p></li>
+      <li><span class="when">Later</span><p>Online co-op with a few friends, never an MMO.</p></li>
+    </ul>
+    <p class="honest">Audio is placeholder for now.</p>
+  </div>
+</section>
+
+<hr class="sep">
+
+<!-- 6. GET IT -->
+<section id="get" class="getit">
+  <div class="wrap">
+    <span class="label">Get it</span>
+    <h2>Free on itch, for Windows</h2>
+    <div class="pane" style="margin-top:var(--sp-xl)">
+      <div class="cta-row">
+        <a class="btn btn-primary" href="https://tairoyzone.itch.io/shivaliva-shanty">Download free on itch</a>
+        <a class="btn" href="https://tairoyzone.itch.io/shivaliva-shanty/devlog">Read the devlog</a>
+      </div>
+      <!-- Re-check Size and Version against build/ShivalivaShanty_windows.zip on EVERY export, alongside the version bump. -->
+      <div class="facts" aria-label="File facts">
+        <span class="chip">File<b>Windows zip</b></span>
+        <span class="chip">Size<b>130 MB</b></span>
+        <span class="chip">Version<b>1.3.1</b></span>
+      </div>
+      <p>Name your own price on itch.</p>
+      <p class="muted">Trojan Bulldog. One person, building in public in Godot 4.7.</p>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- 7. FOOTER -->
+<footer>
+  <div class="wrap foot">
+    <div>
+      <nav class="foot-links" aria-label="Footer">
+        <a href="https://tairoyzone.itch.io/shivaliva-shanty">Game page on itch</a>
+        <a href="https://tairoyzone.itch.io/shivaliva-shanty/devlog">Devlog</a>
+        <a href="https://x.com/trojanatoplat" rel="me">@trojanatoplat on X</a>
+      </nav>
+      <div class="credits">
+        <p>Music: Epic Medieval Music Pack I by pegonthetrack &amp; ELVGames. Additional assets CC-BY 4.0 GDQuest (gdquest.com). Talking Synthesizer by tcarisland, CC-BY-SA 4.0. Characters and environments use Synty POLYGON asset packs and Mixamo animations, used under their respective licences. Made in Godot.</p>
+        <p class="sig">Signed, Trojan Bulldog.</p>
+      </div>
+    </div>
+    <div class="factsheet">
+      <dl>
+        <dt>Developer</dt><dd>Trojan Bulldog / Tairoy Zone, solo</dd>
+        <dt>Engine</dt><dd>Godot 4.7</dd>
+        <dt>Platform</dt><dd>Windows</dd>
+        <dt>Version</dt><dd>1.3.1</dd>
+        <dt>Status</dt><dd>In development</dd>
+        <dt>Players</dt><dd>Single-player</dd>
+      </dl>
+    </div>
+  </div>
+</footer>
+
+<div class="lightbox" id="lightbox" hidden role="dialog" aria-modal="true" aria-label="Screenshot" tabindex="-1">
+  <button class="close" type="button" aria-label="Close">&times;</button>
+  <figure><img alt="" width="1280" height="720"><figcaption></figcaption></figure>
+</div>
+
+<script>
+(function(){
+  var lb=document.getElementById('lightbox');
+  var img=lb.querySelector('img'), cap=lb.querySelector('figcaption'), closeBtn=lb.querySelector('.close');
+  var behind=document.querySelectorAll('header,main,footer');
+  var last=null;
+  function setInert(on){ for(var i=0;i<behind.length;i++){ if(on) behind[i].setAttribute('inert',''); else behind[i].removeAttribute('inert'); } }
+  function open(a){
+    var src=a.getAttribute('href'), alt=a.querySelector('img').alt;
+    img.src=src; img.alt=alt; cap.textContent=alt;
+    lb.hidden=false; document.body.classList.add('lb-open'); setInert(true); last=a; lb.focus();
+  }
+  function close(){
+    if(lb.hidden) return;
+    lb.hidden=true; img.removeAttribute('src'); document.body.classList.remove('lb-open'); setInert(false);
+    if(last) last.focus();
+  }
+  var links=document.querySelectorAll('a.shot');
+  for(var i=0;i<links.length;i++){
+    links[i].addEventListener('click',function(e){ e.preventDefault(); open(this); });
+  }
+  lb.addEventListener('click',close);
+  document.addEventListener('keydown',function(e){
+    if(lb.hidden) return;
+    if(e.key==='Escape'){ close(); return; }
+    if(e.key==='Tab'){ e.preventDefault(); closeBtn.focus(); }
+  });
+
+  if(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+    var vids=document.querySelectorAll('video');
+    for(var j=0;j<vids.length;j++){ vids[j].removeAttribute('autoplay'); vids[j].pause(); }
+  }
+})();
+</script>
+</body>
+</html>
