@@ -13,11 +13,10 @@
 <meta property="og:image:width" content="1280">
 <meta property="og:image:height" content="720">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:site" content="@trojanatoplat">>
+<meta name="twitter:site" content="@trojanatoplat">
 <meta name="theme-color" content="#08101A">
-<meta property="og:title" content="Shivaliva Shanty">
-<meta property="og:description" content="A sky-pirate puzzle adventure where the islanders remember what you did and talk about it. Six mini-games, one island, free on itch for Windows.">
-<meta property="og:type" content="website">
+<link rel="canonical" href="https://shivalivaleveling.com/">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"VideoGame","name":"Shivaliva Shanty","url":"https://shivalivaleveling.com/","image":"https://shivalivaleveling.com/assets/shot_1_skirmish_duel.png","description":"A sky-pirate puzzle adventure where the islanders remember what you did and talk about it. Six mini-games, one island, free on itch for Windows.","genre":["Puzzle","Adventure"],"gamePlatform":"Windows","operatingSystem":"Windows","applicationCategory":"Game","author":{"@type":"Person","name":"Trojan Bulldog"},"offers":{"@type":"Offer","price":"0","priceCurrency":"USD","url":"https://tairoyzone.itch.io/shivaliva-shanty"}}</script>
 <link rel="icon" href="assets/icon_32.png" sizes="32x32" type="image/png">
 <link rel="icon" href="assets/icon_256.png" sizes="256x256" type="image/png">
 <link rel="apple-touch-icon" href="assets/icon_256.png">
@@ -172,9 +171,72 @@ footer{padding:var(--sp-xxl) 0 var(--sp-xxl);border-top:1px solid var(--border-h
 .factsheet dd{margin:0;color:var(--text)}
 .credits p{margin-top:var(--sp-sm)}
 .sig{margin-top:var(--sp-lg);color:var(--text)}
+
+/* 8. Upgrade pass: top bar, hero atmosphere, section rhythm, timeline, lightbox nav */
+html{scroll-behavior:smooth}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+section{scroll-margin-top:72px}
+.topbar{position:sticky;top:0;z-index:40;background:var(--panel-glass-deep);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border-bottom:1px solid var(--border-chip)}
+.topbar .wrap{display:flex;align-items:center;gap:var(--sp-lg);min-height:56px}
+.brand{display:flex;align-items:center;gap:var(--sp-sm);color:var(--text);font-size:var(--fs-small-caps);letter-spacing:2px;text-transform:uppercase;white-space:nowrap}
+.brand img{width:28px;height:28px;border-radius:var(--radius-xs)}
+.brand:hover{text-decoration:none;color:var(--accent)}
+.topnav{display:none;gap:var(--sp-xl);margin-left:auto;font-size:var(--fs-small)}
+.topnav a{color:var(--text-caption);padding:var(--sp-sm) 0;border-bottom:1px solid transparent;transition:color var(--dur-instant),border-color var(--dur-instant)}
+.topnav a:hover{color:var(--accent);text-decoration:none;border-bottom-color:var(--accent)}
+.topbar .btn{margin-left:auto;padding:var(--sp-sm) var(--sp-lg);font-size:var(--fs-small);white-space:nowrap}
+.topbar .btn:hover{padding:calc(var(--sp-sm) - 1px) calc(var(--sp-lg) - 1px)}
+@media(min-width:900px){.topnav{display:flex}.topbar .btn{margin-left:0}}
+
+.hero{position:relative;isolation:isolate;overflow:hidden;padding:calc(var(--sp-xxl) + var(--sp-lg)) 0 var(--sp-xxl)}
+.hero::before{content:"";position:absolute;inset:0;z-index:-2;background:url(assets/hero_bg.jpg) center 40%/cover no-repeat;opacity:.5}
+.hero::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,color-mix(in srgb,var(--bg-void) 70%,transparent) 0%,color-mix(in srgb,var(--bg) 35%,transparent) 40%,var(--bg) 88%)}
+.wordmark img{filter:drop-shadow(0 6px 18px color-mix(in srgb,var(--bg-void) 70%,transparent))}
+.hero .cta-row{margin-top:var(--sp-xl)}
+.hero-facts{display:flex;flex-wrap:wrap;justify-content:center;gap:var(--sp-sm);margin-top:var(--sp-lg)}
+.hero-facts .chip{background:var(--chip)}
+.clip{box-shadow:var(--shadow-soft),0 0 0 1px color-mix(in srgb,var(--accent) 12%,transparent)}
+.btn-quiet{background:transparent;border-color:var(--border-chip)}
+
+main{counter-reset:sec}
+main .label::before{counter-increment:sec;content:"0" counter(sec);font-size:var(--fs-small-caps);letter-spacing:1px;color:var(--accent)}
+main>section:nth-of-type(even){background:color-mix(in srgb,var(--panel) 45%,var(--bg))}
+.lead{font-size:var(--fs-title);line-height:1.45}
+@media(max-width:899px){.lead{font-size:var(--fs-body)}}
+
+@media(min-width:900px){.shots{grid-template-columns:repeat(3,1fr)}}
+.lightbox .nav{position:absolute;top:50%;transform:translateY(-50%);font:inherit;font-size:var(--fs-heading);line-height:1;width:48px;height:72px;background:var(--panel-glass);border:1px solid var(--border-hair);border-radius:var(--radius-xs);color:var(--text);cursor:pointer;transition:color var(--dur-instant),border-color var(--dur-instant)}
+.lightbox .nav:hover{color:var(--accent);border-color:var(--accent)}
+.lightbox .prev{left:var(--sp-lg)}
+.lightbox .next{right:var(--sp-lg)}
+@media(max-width:639px){.lightbox .nav{top:auto;bottom:var(--sp-lg);transform:none;height:48px}}
+
+@media(min-width:900px){
+  .road{grid-template-columns:repeat(3,1fr);gap:var(--sp-lg)}
+  .road li{grid-template-columns:1fr;gap:var(--sp-sm);padding-top:var(--sp-xl);border-top:2px solid var(--border-hair);border-radius:0 0 var(--radius-xs) var(--radius-xs)}
+  .road li.now{border-top-color:var(--positive)}
+}
+.foot-links a{color:var(--text-caption)}
+.foot-links a:hover{color:var(--accent)}
+.foot-links .zip{color:var(--accent)}
 </style>
 </head>
-<body>
+<body id="top">
+
+<!-- 0. TOP BAR -->
+<div class="topbar">
+  <div class="wrap">
+    <a class="brand" href="#top"><img src="assets/icon_32.png" alt="" width="32" height="32">Shivaliva Shanty</a>
+    <nav class="topnav" aria-label="Sections">
+      <a href="#talk">The islanders</a>
+      <a href="#passage">How to play</a>
+      <a href="#screenshots">Screenshots</a>
+      <a href="#roadmap">Roadmap</a>
+      <a href="press/">Press kit</a>
+    </nav>
+    <a class="btn btn-primary" href="https://tairoyzone.itch.io/shivaliva-shanty">Download free</a>
+  </div>
+</div>
 
 <!-- 1. HERO -->
 <header class="hero">
@@ -186,7 +248,9 @@ footer{padding:var(--sp-xxl) 0 var(--sp-xxl);border-top:1px solid var(--border-h
     <div class="cta-row">
       <a class="btn btn-primary" href="https://tairoyzone.itch.io/shivaliva-shanty">Download free on itch</a>
       <a class="btn" href="https://tairoyzone.itch.io/shivaliva-shanty/devlog">Read the devlog</a>
+      <a class="btn btn-quiet" href="press/">Press kit</a>
     </div>
+    <p class="hero-facts" aria-label="At a glance"><span class="chip">Free<b>name your price</b></span><span class="chip">Windows<b>130 MB</b></span><span class="chip">Version<b>1.3.1</b></span><span class="chip">Godot<b>4.7</b></span></p>
 
     <div class="clip">
       <video autoplay muted loop playsinline preload="metadata" poster="assets/clip_5_meet_poster.jpg" width="960" height="540" aria-label="Six seconds of the island: walking into the tavern and up to an islander to start a conversation">
@@ -354,6 +418,8 @@ footer{padding:var(--sp-xxl) 0 var(--sp-xxl);border-top:1px solid var(--border-h
         <a href="https://tairoyzone.itch.io/shivaliva-shanty">Game page on itch</a>
         <a href="https://tairoyzone.itch.io/shivaliva-shanty/devlog">Devlog</a>
         <a href="https://x.com/trojanatoplat" rel="me">@trojanatoplat on X</a>
+        <a href="press/">Press kit</a>
+        <a class="zip" href="press/presskit.zip">presskit.zip (4.8 MB)</a>
       </nav>
       <div class="credits">
         <p>Music: Epic Medieval Music Pack I by pegonthetrack &amp; ELVGames. Additional assets CC-BY 4.0 GDQuest (gdquest.com). Talking Synthesizer by tcarisland, CC-BY-SA 4.0. Characters and environments use Synty POLYGON asset packs and Mixamo animations, used under their respective licences. Made in Godot.</p>
@@ -375,6 +441,8 @@ footer{padding:var(--sp-xxl) 0 var(--sp-xxl);border-top:1px solid var(--border-h
 
 <div class="lightbox" id="lightbox" hidden role="dialog" aria-modal="true" aria-label="Screenshot" tabindex="-1">
   <button class="close" type="button" aria-label="Close">&times;</button>
+  <button class="nav prev" type="button" aria-label="Previous screenshot">&lsaquo;</button>
+  <button class="nav next" type="button" aria-label="Next screenshot">&rsaquo;</button>
   <figure><img alt="" width="1280" height="720"><figcaption></figcaption></figure>
 </div>
 
@@ -382,12 +450,19 @@ footer{padding:var(--sp-xxl) 0 var(--sp-xxl);border-top:1px solid var(--border-h
 (function(){
   var lb=document.getElementById('lightbox');
   var img=lb.querySelector('img'), cap=lb.querySelector('figcaption'), closeBtn=lb.querySelector('.close');
-  var behind=document.querySelectorAll('header,main,footer');
-  var last=null;
+  var prevBtn=lb.querySelector('.prev'), nextBtn=lb.querySelector('.next');
+  var behind=document.querySelectorAll('.topbar,header,main,footer');
+  var last=null, cur=-1;
   function setInert(on){ for(var i=0;i<behind.length;i++){ if(on) behind[i].setAttribute('inert',''); else behind[i].removeAttribute('inert'); } }
+  var links=document.querySelectorAll('a.shot');
+  function show(i){
+    cur=(i+links.length)%links.length;
+    var a=links[cur], src=a.getAttribute('href'), alt=a.querySelector('img').alt;
+    img.src=src; img.alt=alt; cap.textContent=alt+' ('+(cur+1)+' of '+links.length+')';
+  }
   function open(a){
-    var src=a.getAttribute('href'), alt=a.querySelector('img').alt;
-    img.src=src; img.alt=alt; cap.textContent=alt;
+    var i=Array.prototype.indexOf.call(links,a);
+    show(i);
     lb.hidden=false; document.body.classList.add('lb-open'); setInert(true); last=a; lb.focus();
   }
   function close(){
@@ -395,20 +470,38 @@ footer{padding:var(--sp-xxl) 0 var(--sp-xxl);border-top:1px solid var(--border-h
     lb.hidden=true; img.removeAttribute('src'); document.body.classList.remove('lb-open'); setInert(false);
     if(last) last.focus();
   }
-  var links=document.querySelectorAll('a.shot');
   for(var i=0;i<links.length;i++){
     links[i].addEventListener('click',function(e){ e.preventDefault(); open(this); });
   }
   lb.addEventListener('click',close);
+  prevBtn.addEventListener('click',function(e){ e.stopPropagation(); show(cur-1); });
+  nextBtn.addEventListener('click',function(e){ e.stopPropagation(); show(cur+1); });
+  var focusables=[closeBtn,prevBtn,nextBtn];
   document.addEventListener('keydown',function(e){
     if(lb.hidden) return;
     if(e.key==='Escape'){ close(); return; }
-    if(e.key==='Tab'){ e.preventDefault(); closeBtn.focus(); }
+    if(e.key==='ArrowLeft'){ show(cur-1); return; }
+    if(e.key==='ArrowRight'){ show(cur+1); return; }
+    if(e.key==='Tab'){
+      e.preventDefault();
+      var k=focusables.indexOf(document.activeElement);
+      k=(k+(e.shiftKey?-1:1)+focusables.length)%focusables.length;
+      focusables[k].focus();
+    }
   });
 
+  var vids=document.querySelectorAll('video');
   if(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches){
-    var vids=document.querySelectorAll('video');
     for(var j=0;j<vids.length;j++){ vids[j].removeAttribute('autoplay'); vids[j].pause(); }
+  } else if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(entries){
+      for(var k=0;k<entries.length;k++){
+        var v=entries[k].target;
+        if(entries[k].isIntersecting){ if(v.paused){ var pr=v.play(); if(pr&&pr.catch) pr.catch(function(){}); } }
+        else if(!v.paused){ v.pause(); }
+      }
+    },{rootMargin:'160px 0px'});
+    for(var m=0;m<vids.length;m++){ io.observe(vids[m]); }
   }
 })();
 </script>

@@ -13,7 +13,8 @@
 <meta property="og:image:width" content="1280">
 <meta property="og:image:height" content="720">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:site" content="@trojanatoplat">>
+<meta name="twitter:site" content="@trojanatoplat">
+<link rel="canonical" href="https://shivalivaleveling.com/press/">
 <link rel="icon" href="../assets/icon_32.png" sizes="32x32" type="image/png">
 <style>
 :root{
@@ -39,7 +40,15 @@ a:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
 img,video{max-width:100%;height:auto;display:block}
 .wrap{max-width:1100px;margin:0 auto;padding:0 var(--sp-lg)}
 
-header.masthead{padding:var(--sp-xxl) 0 var(--sp-xl);text-align:center;border-bottom:1px solid var(--border-chip)}
+header.masthead{position:relative;isolation:isolate;overflow:hidden;padding:var(--sp-xl) 0 var(--sp-xl);text-align:center;border-bottom:1px solid var(--border-chip)}
+header.masthead::before{content:"";position:absolute;inset:0;z-index:-2;background:url(../assets/hero_bg.jpg) center 40%/cover no-repeat;opacity:.45}
+header.masthead::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,color-mix(in srgb,var(--bg-void) 70%,transparent) 0%,color-mix(in srgb,var(--bg) 40%,transparent) 45%,var(--bg) 100%)}
+header.masthead h1 img{filter:drop-shadow(0 6px 18px color-mix(in srgb,var(--bg-void) 70%,transparent))}
+.crumbs{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:var(--sp-md) var(--sp-lg);margin-bottom:var(--sp-xl);font-size:var(--fs-small);text-align:left}
+.crumbs a{text-decoration:none;color:var(--text-caption)}
+.crumbs a:hover{color:var(--accent)}
+.crumbs .primary{margin-top:0;color:var(--accent)}
+.crumbs .home::before{content:"\25C6";color:var(--accent);font-size:10px;margin-right:var(--sp-sm);vertical-align:1px}
 header.masthead h1{margin:0}
 header.masthead img{margin:0 auto;width:min(560px,100%)}
 header.masthead p{margin:var(--sp-lg) 0 0;color:var(--text-caption);font-size:var(--fs-small);letter-spacing:.08em;text-transform:uppercase}
@@ -97,6 +106,10 @@ footer{border-top:1px solid var(--border-chip);padding:var(--sp-xl) 0 var(--sp-x
 
 <header class="masthead">
   <div class="wrap">
+    <div class="crumbs">
+      <a class="home" href="../">Shivaliva Shanty, the site</a>
+      <a class="primary" href="presskit.zip">Download presskit.zip (4.8 MB)</a>
+    </div>
     <h1><img src="../assets/wordmark_1200.png" width="1200" height="350" alt="Shivaliva Shanty"></h1>
     <p>Press kit</p>
   </div>
@@ -104,6 +117,7 @@ footer{border-top:1px solid var(--border-chip);padding:var(--sp-xl) 0 var(--sp-x
 
 <nav class="toc" aria-label="Sections">
   <ul>
+    <li><a href="../">Site</a></li>
     <li><a href="#factsheet">Factsheet</a></li>
     <li><a href="#description">Description</a></li>
     <li><a href="#history">History</a></li>
