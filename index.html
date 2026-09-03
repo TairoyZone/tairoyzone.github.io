@@ -81,6 +81,9 @@ h3{font-size:var(--fs-title);line-height:1.3;color:var(--text)}
 .btn{display:inline-block;font:inherit;font-size:var(--fs-body);line-height:1.2;padding:var(--sp-md) var(--sp-xl);border-radius:var(--radius-xs);border:1px solid var(--border-hair);background:var(--card);color:var(--text);cursor:pointer;text-align:center;transition:background var(--dur-instant),border-color var(--dur-instant),color var(--dur-instant),box-shadow var(--dur-fast)}
 .btn:hover{text-decoration:none;background:var(--card-hover);border:2px solid var(--accent);padding:calc(var(--sp-md) - 1px) calc(var(--sp-xl) - 1px);color:var(--text-hover)}
 .btn:active{background:var(--card-press);box-shadow:var(--shadow-press)}
+/* A resting lift, so a secondary button reads as pressable before you hover it. */
+.btn:not(.btn-primary){box-shadow:0 1px 0 rgba(255,255,255,0.05),0 2px 7px rgba(0,0,0,0.38)}
+.btn:not(.btn-primary):active{box-shadow:var(--shadow-press)}
 .btn-primary{color:var(--accent);border:1px solid var(--accent);box-shadow:0 0 12px var(--accent-glow)}
 .btn-primary:hover{color:var(--accent-hover);background:var(--card-hover);box-shadow:0 0 12px var(--accent-glow)}
 .btn-primary:active{box-shadow:var(--shadow-press),0 0 12px var(--accent-glow)}
@@ -171,7 +174,11 @@ body.lb-open{overflow:hidden}
 /* 6. Get it */
 .getit .pane{padding:var(--sp-xl);display:grid;gap:var(--sp-lg)}
 .facts{display:flex;flex-wrap:wrap;gap:var(--sp-sm)}
-.chip{display:inline-block;background:var(--card);border:1px solid var(--border-card);border-radius:var(--radius-xs);padding:var(--sp-xs) var(--sp-md);font-size:var(--fs-small-caps);letter-spacing:2px;text-transform:uppercase;color:var(--text-caption)}
+/* A CHIP IS A LABEL AND MUST NOT LOOK LIKE A BUTTON (Troy 2026-09-03: "i couldnt distinguish between what
+   is a clickable button and which one is not"). It used to share the button's 4px radius, its 1px gold border
+   and its card fill, so a chip was just a smaller button. The difference is now CATEGORICAL: pills with no
+   border for facts, bordered rectangles for controls. */
+.chip{display:inline-block;background:rgba(184,161,122,0.10);border:0;border-radius:var(--radius-pill);padding:var(--sp-xs) var(--sp-lg);font-size:var(--fs-small-caps);letter-spacing:2px;text-transform:uppercase;color:var(--text-caption)}
 .chip b{font-weight:400;color:var(--text);letter-spacing:0;text-transform:none;font-size:var(--fs-small);margin-left:var(--sp-sm)}
 
 /* 7. Footer */
@@ -191,7 +198,7 @@ html{scroll-behavior:smooth}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 section{scroll-margin-top:72px}
 .topbar{position:sticky;top:0;z-index:40;background:var(--panel-glass-deep);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border-bottom:1px solid var(--border-chip)}
-.topbar .wrap{display:flex;align-items:center;gap:var(--sp-lg);min-height:56px}
+.topbar .wrap{position:relative;display:flex;align-items:center;gap:var(--sp-lg);min-height:56px}
 .brand{display:flex;align-items:center;gap:var(--sp-sm);color:var(--text);font-size:var(--fs-small-caps);letter-spacing:2px;text-transform:uppercase;white-space:nowrap}
 .brand img{width:28px;height:28px;border-radius:var(--radius-xs)}
 .brand:hover{text-decoration:none;color:var(--accent)}
@@ -201,6 +208,24 @@ section{scroll-margin-top:72px}
 .topbar .btn{margin-left:auto;padding:var(--sp-sm) var(--sp-lg);font-size:var(--fs-small);white-space:nowrap}
 .topbar .btn:hover{padding:calc(var(--sp-sm) - 1px) calc(var(--sp-lg) - 1px)}
 @media(min-width:900px){.topnav{display:flex}.topbar .btn{margin-left:0}}
+/* THE MOBILE NAV (Troy 2026-09-03: "the mobile version doesnt have a hamburger menu for the nav links").
+   Below 900px .topnav was display:none with nothing in its place, so six sections were unreachable. */
+.navtoggle{display:none;align-items:center;justify-content:center;width:42px;height:42px;padding:0;background:var(--card);border:1px solid var(--border-hair);border-radius:var(--radius-xs);color:var(--text);cursor:pointer;box-shadow:0 1px 0 rgba(255,255,255,0.05),0 2px 7px rgba(0,0,0,0.38)}
+.navtoggle svg{fill:currentColor;pointer-events:none}
+/* The bar is brand + Download + toggle. At 375px the three did not fit: the brand word was clipped mid-word
+   ("SHIVALIVA SHANT") and flex squeezed the 42px toggle down to 23px. The controls now hold their size and
+   the brand word steps aside, since the icon alone still identifies the page. */
+.navtoggle,.topbar .btn{flex:0 0 auto}
+.brand{min-width:0}
+@media(max-width:559px){.brand-name{display:none}}
+.navtoggle:hover,.navtoggle[aria-expanded="true"]{border-color:var(--accent);color:var(--accent)}
+@media(max-width:899px){
+  .topnav{position:absolute;left:0;right:0;top:100%;flex-direction:column;gap:0;margin:0;padding:var(--sp-sm) 0;background:var(--panel);border-bottom:1px solid var(--border-hair);box-shadow:0 12px 28px rgba(0,0,0,0.55)}
+  .navtoggle{display:inline-flex}
+  .topnav[data-open]{display:flex}
+  .topnav a{padding:var(--sp-md) var(--sp-lg);border-bottom:0}
+  .topnav a:hover{background:var(--card-hover);border-bottom-color:transparent}
+}
 
 .hero{position:relative;isolation:isolate;overflow:hidden;padding:calc(var(--sp-xxl) + var(--sp-lg)) 0 var(--sp-xxl)}
 .hero::before{content:"";position:absolute;inset:0;z-index:-2;background:url(assets/hero_bg.jpg) center 40%/cover no-repeat;opacity:.5}
@@ -208,7 +233,7 @@ section{scroll-margin-top:72px}
 .wordmark img{filter:drop-shadow(0 6px 18px color-mix(in srgb,var(--bg-void) 70%,transparent))}
 .hero .cta-row{margin-top:var(--sp-xl)}
 .hero-facts{display:flex;flex-wrap:wrap;justify-content:center;gap:var(--sp-sm);margin-top:var(--sp-lg)}
-.hero-facts .chip{background:var(--chip)}
+.hero-facts .chip{background:rgba(184,161,122,0.10)}
 .clip{box-shadow:var(--shadow-soft),0 0 0 1px color-mix(in srgb,var(--accent) 12%,transparent)}
 .btn-quiet{background:transparent;border-color:var(--border-chip)}
 
@@ -250,8 +275,8 @@ main>section:nth-of-type(even){background:color-mix(in srgb,var(--panel) 45%,var
 <!-- 0. TOP BAR -->
 <div class="topbar">
   <div class="wrap">
-    <a class="brand" href="#top"><img src="assets/icon_32.png" alt="" width="32" height="32">Shivaliva Shanty</a>
-    <nav class="topnav" aria-label="Sections">
+    <a class="brand" href="#top"><img src="assets/icon_32.png" alt="" width="32" height="32"><span class="brand-name">Shivaliva Shanty</span></a>
+    <nav class="topnav" id="topnav" aria-label="Sections">
       <a href="#talk">The islanders</a>
       <a href="#passage">How to play</a>
       <a href="#screenshots">Screenshots</a>
@@ -260,6 +285,7 @@ main>section:nth-of-type(even){background:color-mix(in srgb,var(--panel) 45%,var
       <a href="press/">Press kit</a>
     </nav>
     <a class="btn btn-primary" href="https://tairoyzone.itch.io/shivaliva-shanty">Download free</a>
+    <button class="navtoggle" type="button" aria-expanded="false" aria-controls="topnav" aria-label="Menu"><svg width="22" height="22" viewBox="0 0 22 22" aria-hidden="true"><rect x="3" y="5" width="16" height="2" rx="1"/><rect x="3" y="10" width="16" height="2" rx="1"/><rect x="3" y="15" width="16" height="2" rx="1"/></svg></button>
   </div>
 </div>
 
@@ -507,6 +533,20 @@ main>section:nth-of-type(even){background:color-mix(in srgb,var(--panel) 45%,var
 </div>
 
 <script>
+(function(){
+  var t=document.querySelector('.navtoggle'), n=document.getElementById('topnav');
+  if(t&&n){
+    function setOpen(on){
+      t.setAttribute('aria-expanded',on?'true':'false');
+      if(on) n.setAttribute('data-open',''); else n.removeAttribute('data-open');
+    }
+    t.addEventListener('click',function(e){ e.stopPropagation(); setOpen(t.getAttribute('aria-expanded')!=='true'); });
+    n.addEventListener('click',function(e){ if(e.target.closest('a')) setOpen(false); });
+    document.addEventListener('click',function(e){ if(!n.contains(e.target)&&!t.contains(e.target)) setOpen(false); });
+    document.addEventListener('keydown',function(e){ if(e.key==='Escape'&&t.getAttribute('aria-expanded')==='true'){ setOpen(false); t.focus(); } });
+    window.addEventListener('resize',function(){ if(window.innerWidth>=900) setOpen(false); });
+  }
+})();
 (function(){
   var lb=document.getElementById('lightbox');
   var img=lb.querySelector('img'), cap=lb.querySelector('figcaption'), closeBtn=lb.querySelector('.close');
