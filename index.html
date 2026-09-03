@@ -102,6 +102,10 @@ h3{font-size:var(--fs-title);line-height:1.3;color:var(--text)}
 @media(max-width:479px){.hero .cta-row .btn{flex:1 1 100%}}
 .clip{position:relative;margin:var(--sp-xl) auto 0;max-width:960px;aspect-ratio:16/9;max-height:min(540px,60vh);background:var(--slot);border:1px solid var(--border-hair);border-radius:var(--radius-sm);overflow:hidden;box-shadow:var(--shadow-soft)}
 .clip video,.clip .still{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+/* The trailer. preload=none so 10 MB costs nothing until someone presses play. */
+.trailer{margin:var(--sp-xl) auto 0;max-width:960px}
+.trailer video{width:100%;aspect-ratio:16/9;border:1px solid var(--hairline);border-radius:var(--r-md);background:#000}
+.trailer figcaption{margin-top:var(--sp-sm);color:var(--muted);font-size:15px;text-align:center}
 .clip .still{display:none}
 @media(prefers-reduced-motion:reduce){.clip video{display:none}.clip .still{display:block}}
 .tiles{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:var(--sp-md);max-width:960px;margin:var(--sp-xl) auto 0}
@@ -279,6 +283,13 @@ main>section:nth-of-type(even){background:color-mix(in srgb,var(--panel) 45%,var
       </video>
       <img class="still" src="assets/clip_5_meet_poster.jpg" alt="The tavern on Cradle Rock: you in the middle of the floor, islanders at the bar and by the fire with their names and moods over their heads" width="960" height="540">
     </div>
+
+    <figure class="trailer">
+      <video controls preload="none" playsinline width="1280" height="720" poster="assets/trailer_poster.jpg" aria-label="Shivaliva Shanty trailer, 70 seconds">
+        <source src="assets/trailer_720p.mp4" type="video/mp4">
+      </video>
+      <figcaption>The trailer, 70 seconds.</figcaption>
+    </figure>
 
     <ul class="tiles" aria-label="The six mini-games">
       <li><figure class="tile"><video class="loop" autoplay muted loop playsinline preload="metadata" poster="assets/gif_1_duel_poster.jpg" width="640" height="360" aria-label="Skirmish: a falling-block duel against an islander, lines clearing and garbage rising"><source src="assets/gif_1_duel.mp4" type="video/mp4"></video><figcaption>Skirmish</figcaption></figure></li>
