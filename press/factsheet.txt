@@ -7,7 +7,7 @@ Genre:            Single-player puzzle-skill adventure among floating sky-island
                   A spiritual successor to Puzzle Pirates.
 Status:           Public demo, in active development. Public on itch.io since
                   June 2026; versioned builds from 16 July 2026 (v0.1.0).
-Current version:  v1.4.0 (2 September 2026)
+Current version:  v1.4.1 (3 September 2026)
 Platform:         Windows (PC)
 Price:            Free, name your price
 Download size:    About 136 MB
