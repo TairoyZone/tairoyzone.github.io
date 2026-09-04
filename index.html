@@ -162,14 +162,40 @@ h3{font-size:var(--fs-title);line-height:1.3;color:var(--text)}
 .lightbox .close:hover{color:var(--text)}
 body.lb-open{overflow:hidden}
 
-/* 5. Roadmap */
-.road{display:grid;gap:var(--sp-md);margin-top:var(--sp-xl)}
-.road li{display:grid;grid-template-columns:96px 1fr;gap:var(--sp-lg);align-items:start;padding:var(--sp-lg);background:var(--panel);border:1px solid var(--border-hair);border-radius:var(--radius-xs)}
-.road .when{font-size:var(--fs-small-caps);letter-spacing:2px;text-transform:uppercase;color:var(--accent);padding-top:var(--sp-xs)}
-.road .now .when::before{content:"\2713";color:var(--positive);margin-right:var(--sp-sm)}
-.road p{color:var(--text)}
-.honest{margin-top:var(--sp-lg);font-size:var(--fs-small);color:var(--text-muted)}
-.honest::before{content:"\25B2";color:var(--caution);margin-right:var(--sp-sm);font-size:var(--fs-glyph)}
+/* 5. Roadmap
+   A vertical timeline: a hairline rail, a marker per phase, a card beside it. The marker's fill is the
+   status, so the state reads before any text does.
+   ⚠️ THE STATE PILL IS A CHIP, NOT A BUTTON. Same borderless pill as .chip (Troy 2026-09-03: a chip and a
+   button must not be confusable). It carries state in its TEXT colour only, from tokens that already exist
+   here, so nothing new enters the palette. */
+.road{display:grid;gap:0;margin-top:var(--sp-xl);list-style:none;padding:0}
+.road li{position:relative;display:grid;grid-template-columns:22px 1fr;gap:var(--sp-lg);
+  padding:0 0 var(--sp-xl) 0;align-items:start}
+.road li:last-child{padding-bottom:0}
+/* the rail, drawn behind the markers and stopped short on the final row */
+.road li::before{content:"";position:absolute;left:10px;top:18px;bottom:0;width:1px;background:var(--border-hair)}
+.road li:last-child::before{display:none}
+.road .mark{position:relative;z-index:1;width:11px;height:11px;margin:6px 0 0 5px;border-radius:50%;
+  background:var(--bg);box-shadow:0 0 0 1px var(--border-hair) inset}
+.road .is-now  .mark{background:var(--positive);box-shadow:0 0 0 3px rgba(97,203,124,0.18)}
+.road .is-built .mark{background:var(--accent);box-shadow:0 0 0 3px var(--accent-glow)}
+.road .pane{background:var(--panel);border:1px solid var(--border-hair);border-radius:var(--radius-xs);
+  padding:var(--sp-lg);display:grid;gap:var(--sp-sm);min-width:0}
+.road h3{font-size:var(--fs-title);margin:0;color:var(--text)}
+.road p{color:var(--text);margin:0}
+.road .state{justify-self:start;background:rgba(184,161,122,0.10);border:0;border-radius:var(--radius-pill);
+  padding:var(--sp-xs) var(--sp-lg);font-size:var(--fs-small-caps);letter-spacing:2px;text-transform:uppercase;
+  color:var(--text-muted)}
+.road .is-now   .state{color:var(--positive)}
+.road .is-built .state{color:var(--accent)}
+@media (max-width:480px){
+  .road li{grid-template-columns:16px 1fr;gap:var(--sp-md)}
+  .road li::before{left:7px}
+  .road .mark{margin-left:2px}
+  .road .state{padding:var(--sp-xs) var(--sp-md);letter-spacing:1px}
+}
+.honest{margin-top:var(--sp-xl);font-size:var(--fs-small);color:var(--text-muted)}
+.honest::before{content:"B2";color:var(--caution);margin-right:var(--sp-sm);font-size:var(--fs-glyph)}
 
 /* 6. Get it */
 .getit .pane{padding:var(--sp-xl);display:grid;gap:var(--sp-lg)}
@@ -250,10 +276,14 @@ main>section:nth-of-type(even){background:color-mix(in srgb,var(--panel) 45%,var
 .lightbox .next{right:var(--sp-lg)}
 @media(max-width:639px){.lightbox .nav{top:auto;bottom:var(--sp-lg);transform:none;height:48px}}
 
+/* The timeline stays a single column at every width. It used to break into three at 900px, which is
+   what a three-row Now/Next/Later list wanted; a timeline reading top to bottom does not. Wider screens
+   get a roomier card and a longer measure instead of more columns. */
 @media(min-width:900px){
-  .road{grid-template-columns:repeat(3,1fr);gap:var(--sp-lg)}
-  .road li{grid-template-columns:1fr;gap:var(--sp-sm);padding-top:var(--sp-xl);border-top:2px solid var(--border-hair);border-radius:0 0 var(--radius-xs) var(--radius-xs)}
-  .road li.now{border-top-color:var(--positive)}
+  .road li{grid-template-columns:26px 1fr;padding-bottom:var(--sp-xxl)}
+  .road li::before{left:12px}
+  .road .mark{margin-left:7px}
+  .road .pane{padding:var(--sp-xl);max-width:760px}
 }
 .faq{display:grid;gap:var(--sp-md);margin-top:var(--sp-xl)}
 @media(min-width:800px){.faq{grid-template-columns:repeat(2,1fr)}}
@@ -434,12 +464,41 @@ main>section:nth-of-type(even){background:color-mix(in srgb,var(--panel) 45%,var
   <div class="wrap">
     <span class="label">Where it is going</span>
     <h2>The roadmap, plainly</h2>
-    <ul class="road">
-      <li class="now"><span class="when">Now</span><p>Cradle Rock, one island, fully dressed, playable today.</p></li>
-      <li><span class="when">Next</span><p>Built, not in the demo yet: voyages, a crew, your own ship, mending the hull mid-flight.</p></li>
-      <li><span class="when">Later</span><p>Online co-op with a few friends, never an MMO.</p></li>
-    </ul>
-    <p class="honest">Audio is placeholder for now.</p>
+    <ol class="road">
+      <li class="is-now">
+        <span class="mark" aria-hidden="true"></span>
+        <div class="pane">
+          <span class="state">In the demo</span>
+          <h3>Cradle Rock</h3>
+          <p>One island, fully dressed. Six jobs and tables to play, a cast who keep their own schedules and remember you, the gym ladder, and the Labyrinth Ordeal at the end of it. Earn your passage and the demo closes at the sky dock.</p>
+        </div>
+      </li>
+      <li class="is-built">
+        <span class="mark" aria-hidden="true"></span>
+        <div class="pane">
+          <span class="state">Built, not in the demo</span>
+          <h3>The ship and the voyage</h3>
+          <p>Buying a hull, taking a crew aboard and sailing out. The duty stations that keep a ship flying are written and tested: bilging, sailmaking and the sailing itself. Cut from this build, not missing from the game.</p>
+        </div>
+      </li>
+      <li>
+        <span class="mark" aria-hidden="true"></span>
+        <div class="pane">
+          <span class="state">Planned</span>
+          <h3>A second island</h3>
+          <p>Driftspar, with its own cast and its own tables. Somewhere to sail to that is not where you started.</p>
+        </div>
+      </li>
+      <li>
+        <span class="mark" aria-hidden="true"></span>
+        <div class="pane">
+          <span class="state">Planned</span>
+          <h3>Playing together</h3>
+          <p>Drop-in co-op for a few friends, one session at a time. It will never be an MMO.</p>
+        </div>
+      </li>
+    </ol>
+    <p class="honest">No dates on purpose. Art and audio are placeholder for now.</p>
   </div>
 </section>
 
