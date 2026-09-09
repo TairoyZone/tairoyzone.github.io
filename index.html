@@ -303,6 +303,25 @@ main>section:nth-of-type(even){background:color-mix(in srgb,var(--panel) 45%,var
 .foot-links a{color:var(--text-caption)}
 .foot-links a:hover{color:var(--accent)}
 .foot-links .zip{color:var(--accent)}
+
+/* ⭐⭐ TOUCH TARGETS — 44px floor, the Apple HIG / Material minimum.
+   MEASURED on a 375x812 phone: THIRTEEN controls sat under it. The header's Download button at 35px,
+   the whole share row at 27px, every footer link at 22px, the brand mark at 28x28. A cursor lands on a
+   22px link every time; a thumb does not, and the miss costs the tap that mattered.
+
+   ⚠️ SCOPED TO (pointer:coarse), NOT to a width. The rule is about the INPUT DEVICE, not the screen:
+   a narrow desktop window still has a mouse and wants nothing changed, while a wide tablet still has a
+   thumb and does. Sizing this off a breakpoint gets both of those backwards.
+
+   It matters here more than on most sites because the traffic is meant to arrive from YouTube Shorts,
+   which is a phone-first funnel — the visitor is holding the device one-handed when they reach this page. */
+@media (pointer: coarse){
+  .brand{min-height:44px}
+  .topbar .btn{min-height:44px;display:inline-flex;align-items:center;justify-content:center}
+  .navtoggle{width:44px;height:44px}
+  .share a,.share button{min-height:44px;display:inline-flex;align-items:center}
+  .foot-links a{min-height:44px;display:inline-flex;align-items:center}
+}
 </style>
 </head>
 <body id="top">
