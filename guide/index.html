@@ -31,7 +31,17 @@ nav.toc ul{margin:0;padding:0;list-style:none;display:flex;flex-wrap:wrap;gap:8p
 section.game{margin:30px 0;padding:20px 22px;background:var(--panel);border:1px solid var(--border-card);border-radius:10px}
 section.game h2{margin:0 0 6px;font-size:24px;color:var(--accent)}
 section.game .where{margin:0 0 14px;color:var(--text-muted);font-size:15px}
+section.game a.shot{display:block;margin:0 0 14px}
+section.game img{display:block;width:100%;height:auto;border:1px solid var(--border-hair);border-radius:8px}
+section.game a.shot:hover img{border-color:var(--accent)}
 section.game ul{margin:0;padding-left:20px}
+@media(min-width:760px){
+  section.game{display:grid;grid-template-columns:340px 1fr;grid-template-areas:"h h" "w w" "img body";gap:0 22px;align-items:start}
+  section.game h2{grid-area:h}
+  section.game .where{grid-area:w}
+  section.game a.shot{grid-area:img;margin:0}
+  section.game .body{grid-area:body}
+}
 section.game li{margin:6px 0}
 footer{margin:40px 0 60px;color:var(--text-muted);font-size:14px;text-align:center}
 @media(max-width:640px){header.masthead h1{font-size:24px}section.game{padding:16px}}
@@ -59,81 +69,91 @@ footer{margin:40px 0 60px;color:var(--text-muted);font-size:14px;text-align:cent
       <section class="game" id="dishes">
         <h2>Dish Duty</h2>
         <p class="where"><b>The tavern&#x27;s kitchen sink.</b> Pays gold per plate. Ungated: no tools, no fee, and the one job a broke player can always reach.</p>
-        <ul><li>The sponge circles the plate — CLICK / SPACE the instant it crosses a caked-on MUCK spot<li>Grime is crusted on in LAYERS — it takes several clean scrubs to wear a spot down<li>Every good scrub flips the sponge&#x27;s direction — stay sharp<li>Nail scrubs back-to-back to build your FLOW: faster sweeps, tighter timing, MORE suds<li>A good scrub SHOVES the lump a little way along the rim — herd it where you want it<li>A mistimed scrub SLIPS: your flow breaks, grime smears back where you slipped, and THIS plate CHIPS<li>3 chips on one plate and it SHATTERS — no pay, and a strike. 3 strikes and you&#x27;re out for the night<li>A plate that makes it to the rack leaves its chips behind — only a SHATTERED plate costs you<li>The HOT WATER drains as you work — let it run cold and the shift ends there<li>Scrub a KETTLE off a plate&#x27;s rim and it tops the water back up — worth going out of your way for<li>Pay CLIMBS the longer you stay: 1g for your first plates, 6g once you&#x27;re rolling<li>Finish the whole rack for +10g. Wash 6 or more in ONE sitting without smashing a single plate for +15g on top of that<li>Faster? hold RIGHT-CLICK / SHIFT. One load a day — and leaving early restarts the pay ladder</ul>
+        <a class="shot" href="../assets/tile_dishes.png"><img src="../assets/tile_dishes_640.jpg" width="640" height="360" loading="lazy" alt="A plate in a sink of suds, muck spots caked around its rim and the sponge sweeping past them"></a>
+        <div class="body"><ul><li>The sponge circles the plate — CLICK / SPACE the instant it crosses a caked-on MUCK spot<li>Grime is crusted on in LAYERS — it takes several clean scrubs to wear a spot down<li>Every good scrub flips the sponge&#x27;s direction — stay sharp<li>Nail scrubs back-to-back to build your FLOW: faster sweeps, tighter timing, MORE suds<li>A good scrub SHOVES the lump a little way along the rim — herd it where you want it<li>A mistimed scrub SLIPS: your flow breaks, grime smears back where you slipped, and THIS plate CHIPS<li>3 chips on one plate and it SHATTERS — no pay, and a strike. 3 strikes and you&#x27;re out for the night<li>A plate that makes it to the rack leaves its chips behind — only a SHATTERED plate costs you<li>The HOT WATER drains as you work — let it run cold and the shift ends there<li>Scrub a KETTLE off a plate&#x27;s rim and it tops the water back up — worth going out of your way for<li>Pay CLIMBS the longer you stay: 1g for your first plates, 6g once you&#x27;re rolling<li>Finish the whole rack for +10g. Wash 6 or more in ONE sitting without smashing a single plate for +15g on top of that<li>Faster? hold RIGHT-CLICK / SHIFT. One load a day — and leaving early restarts the pay ladder</ul></div>
       </section>
 
       <section class="game" id="lumberjacking">
         <h2>Lumberjacking</h2>
         <p class="where"><b>The Grove work-site.</b> Pays wood, sold at the Market.</p>
-        <ul><li>← → move the falling pair  ·  ↑ rotate ccw  ·  ↓ rotate the other way  ·  ↓ or SPACE drop faster (hold)<li>Pack a 2×2 or bigger SQUARE of one wood — that square is a SLAB, and slabs are the only thing that pays wood<li>A long line of matching wood pays NOTHING — build squares, not rows<li>Land a matching AXE against a group and the whole group SHATTERS, paying out every slab in it<li>Chain shatters back-to-back for combo score<li>A KNOT won&#x27;t clear while it&#x27;s a knot — but it ROTS: three drops after it lands it turns into a plain</ul>
+        <a class="shot" href="../assets/tile_lumberjacking.png"><img src="../assets/tile_lumberjacking_640.jpg" width="640" height="360" loading="lazy" alt="Falling pairs of timber being stacked into the grove&#x27;s frame"></a>
+        <div class="body"><ul><li>← → move the falling pair  ·  ↑ rotate ccw  ·  ↓ rotate the other way  ·  ↓ or SPACE drop faster (hold)<li>Pack a 2×2 or bigger SQUARE of one wood — that square is a SLAB, and slabs are the only thing that pays wood<li>A long line of matching wood pays NOTHING — build squares, not rows<li>Land a matching AXE against a group and the whole group SHATTERS, paying out every slab in it<li>Chain shatters back-to-back for combo score<li>A KNOT won&#x27;t clear while it&#x27;s a knot — but it ROTS: three drops after it lands it turns into a plain</ul>
         <p>log, and the colour showing through as it fades is the wood you&#x27;ll get. Sometimes it&#x27;s an axe</p>
-        <ul><li>Let the pile reach the top and the shift&#x27;s over</ul>
+        <ul><li>Let the pile reach the top and the shift&#x27;s over</ul></div>
       </section>
 
       <section class="game" id="mining">
         <h2>Mining</h2>
         <p class="where"><b>The mine work-site.</b> Pays ore, sold at the Forge.</p>
-        <ul><li>Move the 2x2 cursor with the arrow keys or the mouse<li>Rotate it: C / right-click = clockwise,  X / left-click = counter-clockwise<li>Line up 3+ of the same color to crumble that rock<li>Clear the rock UNDER an ore chunk to dig it down to the floor — chunks are the only thing that scores<li>Dig several chunks in one move for a combo bonus<li>Big clears drop a TOOL — frame it (the cursor shrinks to 1x1) and click to use it<li>Fill the &#x27;TO GET&#x27; meter beside the board (one pip per chunk you dig) to finish the shift</ul>
+        <a class="shot" href="../assets/tile_mining.png"><img src="../assets/tile_mining_640.jpg" width="640" height="360" loading="lazy" alt="The mining grid, rock waiting to be rotated and matched into ore"></a>
+        <div class="body"><ul><li>Move the 2x2 cursor with the arrow keys or the mouse<li>Rotate it: C / right-click = clockwise,  X / left-click = counter-clockwise<li>Line up 3+ of the same color to crumble that rock<li>Clear the rock UNDER an ore chunk to dig it down to the floor — chunks are the only thing that scores<li>Dig several chunks in one move for a combo bonus<li>Big clears drop a TOOL — frame it (the cursor shrinks to 1x1) and click to use it<li>Fill the &#x27;TO GET&#x27; meter beside the board (one pip per chunk you dig) to finish the shift</ul></div>
       </section>
 
       <section class="game" id="poker">
         <h2>Poker</h2>
         <p class="where"><b>The tavern&#x27;s card table.</b> Texas Hold&#x27;em against the islanders, for real gold out of their own pockets.</p>
-        <ul><li>Click action buttons (Fold / Check / Call / Bet / Raise / All-In)<li>Slide the bet amount on raises<li>Best 5-card hand from your 2 hole cards + 5 community cards wins<li>Your chips ARE gold (1:1) — buy in, then Cash Out when you Leave<li>You cash out the chips still in front of you, so chips lost are gold lost<li>A WIN is only ever as big as the money the others still have on them — beat a table of</ul>
+        <a class="shot" href="../assets/shot_3_poker_table.png"><img src="../assets/shot_3_poker_table_640.jpg" width="640" height="360" loading="lazy" alt="A hand of Hold&#x27;em mid-flop: community cards down, islanders seated with their chips, two folded"></a>
+        <div class="body"><ul><li>Click action buttons (Fold / Check / Call / Bet / Raise / All-In)<li>Slide the bet amount on raises<li>Best 5-card hand from your 2 hole cards + 5 community cards wins<li>Your chips ARE gold (1:1) — buy in, then Cash Out when you Leave<li>You cash out the chips still in front of you, so chips lost are gold lost<li>A WIN is only ever as big as the money the others still have on them — beat a table of</ul>
         <p>paupers and there is little there to take</p>
-        <ul><li>Bust and you walk away with nothing</ul>
+        <ul><li>Bust and you walk away with nothing</ul></div>
       </section>
 
       <section class="game" id="gem_drop">
         <h2>Coin Drop</h2>
         <p class="where"><b>The tavern&#x27;s Coin Drop machine.</b> A duel on a pegboard. Winner takes gold from the loser&#x27;s daily pocket.</p>
-        <ul><li>Click an entry slot at the top to drop a gem (your turn only)<li>A gem RESTS on an empty pad, BOUNCES off an occupied pad, and FLIPS a switch when it crosses the lever side<li>Odd flips drop the resting gem off the pad — bumped gems can merge with falling ones into multi-coins (xN score)<li>First to the round target wins the round<li>Best of 4 rounds wins the game — and if it stands level, round 5 is sudden death, played with warp HOLES</ul>
+        <a class="shot" href="../assets/tile_coin_drop.png"><img src="../assets/tile_coin_drop_640.jpg" width="640" height="360" loading="lazy" alt="The Coin Drop pegboard, coins resting on pads and switches ready to flip"></a>
+        <div class="body"><ul><li>Click an entry slot at the top to drop a gem (your turn only)<li>A gem RESTS on an empty pad, BOUNCES off an occupied pad, and FLIPS a switch when it crosses the lever side<li>Odd flips drop the resting gem off the pad — bumped gems can merge with falling ones into multi-coins (xN score)<li>First to the round target wins the round<li>Best of 4 rounds wins the game — and if it stands level, round 5 is sudden death, played with warp HOLES</ul></div>
       </section>
 
       <section class="game" id="skirmish">
         <h2>Skirmish</h2>
         <p class="where"><b>The Cradle Gym, the Labyrinth, and any boarding.</b> Falling blocks, head to head. The island&#x27;s whole fighting ladder runs on it.</p>
-        <ul><li>WASD / arrow keys — move<li>Click a person, door, or work-site (on it, while close) to interact<li>E — open your pack<li>M — the island chart (set a home + whisk to it)<li>J — objectives · R — profile<li>Enter — say something (everyone really talks)<li>Esc — pause</ul>
+        <a class="shot" href="../assets/shot_1_skirmish_duel.png"><img src="../assets/shot_1_skirmish_duel_640.jpg" width="640" height="360" loading="lazy" alt="A Skirmish duel: two wells stacked with blocks, both fighters beside them and the health bars above"></a>
+        <div class="body"><ul><li>WASD / arrow keys — move<li>Click a person, door, or work-site (on it, while close) to interact<li>E — open your pack<li>M — the island chart (set a home + whisk to it)<li>J — objectives · R — profile<li>Enter — say something (everyone really talks)<li>Esc — pause</ul></div>
       </section>
 
       <section class="game" id="sailing">
         <h2>Sailing</h2>
         <p class="where"><b>The ship&#x27;s Sailing station.</b> Crews the rigging on a voyage.</p>
-        <ul><li>The ball of Stardust is a GUST. Your sail is the bar at the foot — A / D or drag to point it<li>Catch gusts and she draws; every one you miss is a push she never gets<li>⭐ WHERE the gust strikes the sail sets where it goes — centre sends it back steep and slow, the outer edge sends it flat and FAST. That is your angle to the wind, and it is the whole craft<li>Punch a lane clean through the bank and the wind gets a straight run at you<li>Miss and the DOLDRUMS creep up from the foot: your trim falls and the sail itself goes sluggish<li>The bank never runs out — clear one and the next bank rolls in, in a new shape<li>The notches left of the board are your LEVEL. Sail well and new Stardust opens; lose gusts and it falls back</ul>
+        <a class="shot" href="../assets/tile_sailing.png"><img src="../assets/tile_sailing_640.jpg" width="640" height="360" loading="lazy" alt="The Sailing station on the ship&#x27;s deck"></a>
+        <div class="body"><ul><li>The ball of Stardust is a GUST. Your sail is the bar at the foot — A / D or drag to point it<li>Catch gusts and she draws; every one you miss is a push she never gets<li>⭐ WHERE the gust strikes the sail sets where it goes — centre sends it back steep and slow, the outer edge sends it flat and FAST. That is your angle to the wind, and it is the whole craft<li>Punch a lane clean through the bank and the wind gets a straight run at you<li>Miss and the DOLDRUMS creep up from the foot: your trim falls and the sail itself goes sluggish<li>The bank never runs out — clear one and the next bank rolls in, in a new shape<li>The notches left of the board are your LEVEL. Sail well and new Stardust opens; lose gusts and it falls back</ul>
         <p>THE STARDUST</p>
         <ul><li>Colour is TOUGHNESS: red is one hit, then blue, green, yellow, pink, black, striped, rainbow, and the brown shell is the hardest thing out there. Every hit knocks a block down one colour, so you can always see how much is left in it<li>CHARGED DUST bursts into everything next to it — aim for the middle of a mass, not the edge<li>SPARK SWARMS drift along their row and will not hold still<li>DRIFT-ROCKS never break. Learn to bank the gust off them<li>STARWINDS never break either, but they pay you and throw the gust out faster<li>HAZE gathers BACK if you leave it. Clear it last<li>Some blocks you cannot see at all until something touches them</ul>
         <p>BROKEN BLOCKS DROP THINGS — CATCH THESE</p>
         <ul><li>SQUALL! — The gust splits in three.<li>MORE CANVAS — A broader sail.<li>STEADY AIR — The gust eases off.<li>GRAPPLE — The gust sticks. Space to let it go.<li>HARPOONS — Space fires from the sail.<li>EMBER WIND — The gust burns straight through.<li>SAFETY NET — One gust saved at the foot.<li>SPARE CANVAS — Wins back a doldrum.<li>FAIR WIND — Trim, free.</ul>
         <p>⚠️ AND DODGE THESE</p>
-        <ul><li>GALE — The gust runs away with you.<li>REEFED IN — Your sail is cut down.<li>CROSSWIND — Left is right.<li>THICK DUST — You sail on memory.</ul>
+        <ul><li>GALE — The gust runs away with you.<li>REEFED IN — Your sail is cut down.<li>CROSSWIND — Left is right.<li>THICK DUST — You sail on memory.</ul></div>
       </section>
 
       <section class="game" id="helm">
         <h2>Navigation</h2>
         <p class="where"><b>The ship&#x27;s Navigation station.</b> Steers the leg. A good watch multiplies what the sailors earn; a booch costs you course.</p>
-        <p>You are at the wheel. Turn it to lay the shot over, and send drift-rock into the field above.</p>
+        <a class="shot" href="../assets/tile_navigation.png"><img src="../assets/tile_navigation_640.jpg" width="640" height="360" loading="lazy" alt="The helm: a bubble shooter fired from the ship&#x27;s wheel, drift-rock stacked above"></a>
+        <div class="body"><p>You are at the wheel. Turn it to lay the shot over, and send drift-rock into the field above.</p>
         <p>Three of a colour touching breaks them — and anything left hanging with nothing above it falls, which is worth far more than the three you broke.</p>
         <p>HOLD YOUR FIRE to bank a group instead of breaking it. Break something touching a bank later and the whole run goes off at once, with a blast that takes the rock around it. Bigger run, bigger blast.</p>
         <p>The sky comes on every few shots. If it comes on with nowhere left to go you have BOOCHED — she turns about and re-sails the leg. It costs you course, never your hull.</p>
         <p>Turn the wheel: A / D, the left stick, or just point.</p>
         <p>Fire: Space.</p>
-        <p>Hold fire: Shift.</p>
+        <p>Hold fire: Shift.</p></div>
       </section>
 
       <section class="game" id="patchworks">
         <h2>Carpentry</h2>
         <p class="where"><b>The ship&#x27;s Carpentry station.</b> Seals the holes a battle opens in the hull.</p>
-        <ul><li>DRAG a piece from the tray onto the hull — or click it, then click where it goes<li>Pieces go in as they come: no turning them. Use all three and a fresh set arrives<li>Green = it fits, red = it won&#x27;t; the lines it would finish light up<li>Fill a whole ROW or COLUMN → it BLASTS clear; clear on back-to-back moves for a combo<li>If none of your pieces fits anywhere, the hull GIVES WAY: the board clears and you lose a quarter of your score</ul>
-        <p>Play as long as you like — your best run sets your rank; hit ← Leave when you&#x27;re done.</p>
+        <a class="shot" href="../assets/tile_carpentry.png"><img src="../assets/tile_carpentry_640.jpg" width="640" height="360" loading="lazy" alt="Carpentry: timber shapes fitted into the holes in the hull"></a>
+        <div class="body"><ul><li>DRAG a piece from the tray onto the hull — or click it, then click where it goes<li>Pieces go in as they come: no turning them. Use all three and a fresh set arrives<li>Green = it fits, red = it won&#x27;t; the lines it would finish light up<li>Fill a whole ROW or COLUMN → it BLASTS clear; clear on back-to-back moves for a combo<li>If none of your pieces fits anywhere, the hull GIVES WAY: the board clears and you lose a quarter of your score</ul>
+        <p>Play as long as you like — your best run sets your rank; hit ← Leave when you&#x27;re done.</p></div>
       </section>
 
       <section class="game" id="loft">
         <h2>Venting</h2>
         <p class="where"><b>The ship&#x27;s Venting station.</b> Clears the Stardust haze that seeps in through those holes.</p>
-        <ul><li>CLICK a stone, then click a neighbour above, below or beside it — or DRAG it onto one.<li>Arrow keys move the cursor; SPACE picks a stone up and puts it down.<li>EVERY swap is allowed, even one that matches nothing — spend moves setting a combo up.<li>Line up 3+ of a hue in a row or column to ignite them. Every clear breathes clean air into the hold.<li>Clear MORE THAN ONE line in a SINGLE swap (a combo: Spark! / Aurora! / Firstlight!) for big LIFT.<li>THE STARDUST seeps in through the hull and hangs in the air, thicker every move. Clear stones to vent it; dawdle on weak clears and it fills the hold until she&#x27;s overcome.</ul>
+        <a class="shot" href="../assets/tile_venting.png"><img src="../assets/tile_venting_640.jpg" width="640" height="360" loading="lazy" alt="Venting: clearing the Stardust haze out of the ship&#x27;s hold"></a>
+        <div class="body"><ul><li>CLICK a stone, then click a neighbour above, below or beside it — or DRAG it onto one.<li>Arrow keys move the cursor; SPACE picks a stone up and puts it down.<li>EVERY swap is allowed, even one that matches nothing — spend moves setting a combo up.<li>Line up 3+ of a hue in a row or column to ignite them. Every clear breathes clean air into the hold.<li>Clear MORE THAN ONE line in a SINGLE swap (a combo: Spark! / Aurora! / Firstlight!) for big LIFT.<li>THE STARDUST seeps in through the hull and hangs in the air, thicker every move. Clear stones to vent it; dawdle on weak clears and it fills the hold until she&#x27;s overcome.</ul>
         <p>THE DUTY GAUGE IS YOUR GRADE. It reads your last 10 swaps — lift banked per swap — and the word it shows is the word the duty report will give you. The lantern in the hold burns that same colour.</p>
         <p>YOUR LEVEL is the bar down the left. Fly Good or better and it climbs; fly Poor and it falls back. It remembers where you settled, so the board finds the level that challenges YOU. Each level adds something to the board and raises what your best combo is worth (×2 at the bottom, uncapped at the top).</p>
-        <ul><li>BELLOWS (level 2) — a pale sack that drifts in. Press it and it blows its own nine. It banks NO lift; what it buys is the cascade that falls in after, and air against the Stardust.<li>GALE (level 3) — match FOUR in a line. The stone earns a double arrow; match it again and the wind clears the whole line the arrow points along.<li>BALLAST (level 4) — an iron-banded crate lands on the board and stays put. You can&#x27;t swap or match it, and stones slide round it, but every clear BESIDE it snaps a band off. When the last band goes it&#x27;s thrown OVERBOARD for big LIFT (more the thicker the Stardust) and the air clears. A Bellows blast beside it counts.<li>BURST (level 5) — match an L or a T. The stone earns a star; match it again and it blasts everything around it.<li>NOVA (level 6, and dealt from level 7) — match FIVE. A dark stone with a star in it: swap it onto any stone and every stone of that colour ignites.</ul>
+        <ul><li>BELLOWS (level 2) — a pale sack that drifts in. Press it and it blows its own nine. It banks NO lift; what it buys is the cascade that falls in after, and air against the Stardust.<li>GALE (level 3) — match FOUR in a line. The stone earns a double arrow; match it again and the wind clears the whole line the arrow points along.<li>BALLAST (level 4) — an iron-banded crate lands on the board and stays put. You can&#x27;t swap or match it, and stones slide round it, but every clear BESIDE it snaps a band off. When the last band goes it&#x27;s thrown OVERBOARD for big LIFT (more the thicker the Stardust) and the air clears. A Bellows blast beside it counts.<li>BURST (level 5) — match an L or a T. The stone earns a star; match it again and it blasts everything around it.<li>NOVA (level 6, and dealt from level 7) — match FIVE. A dark stone with a star in it: swap it onto any stone and every stone of that colour ignites.</ul></div>
       </section>
 
 </main>
