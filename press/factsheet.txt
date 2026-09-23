@@ -28,11 +28,12 @@ walk into the Labyrinth, the first of the Ordeals. Then buy a ship at the sky
 dock, hire a crew and sail out: every duty station aboard is another mini-game,
 and a voyage can end in a battle in the sky and a boarding.
 
-Ten mini-games. On the island: Mining, Coin Drop, Lumberjacking, Dish Duty,
-Skirmish, Poker. On the ship: Sailing, Navigation, Carpentry, Venting.
-Character creator. One currency, shop, backpack, chart. Islanders worth talking
-to: they remember what you did, know what is happening in the room, and pass
-word about you across the island.
+Twelve mini-games. On the island: Mining, Coin Drop, Lumberjacking, Dish Duty,
+Skirmish, Poker. On the ship: Sailing, Navigation, Gunnery, Carpentry, Venting.
+And when a raider catches you: the Space Battle. Character creator. One
+currency, shop, backpack, chart. Islanders worth talking to: they remember what
+you did, know what is happening in the room, and pass word about you across the
+island.
 
 Conversations with islanders need a live internet connection. Everything else
 plays offline.
