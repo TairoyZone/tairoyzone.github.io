@@ -7,10 +7,10 @@ Genre:            Single-player puzzle-skill adventure among floating sky-island
                   A spiritual successor to Puzzle Pirates.
 Status:           Public demo, in active development. Public on itch.io since
                   June 2026; versioned builds from 16 July 2026 (v0.1.0).
-Current version:  v1.21.0 (21 September 2026)
+Current version:  v1.21.1 (24 September 2026)
 Platform:         Windows (PC)
 Price:            Free, name your price
-Download size:    About 339 MB
+Download size:    About 341 MB
 Engine:           Godot 4.7
 Download:         https://tairoyzone.itch.io/shivaliva-shanty
 Social:           https://x.com/trojanatoplat  (@trojanatoplat)
