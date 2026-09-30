@@ -18,8 +18,8 @@ Developer page:   https://tairoyzone.itch.io
 
 SHORT DESCRIPTION
 Shivaliva is a single-player puzzle-skill adventure among floating sky-islands.
-Gather your crew, defeat the Ordeals and find the secret island. Every job, card
-table and ship's station is its own mini-game, and so is every fight.
+Work the island, crew the ship and beat the Labyrinth. Every job, card table and
+ship's station is its own mini-game, and so is every fight.
 
 THE DEMO
 You start on Cradle Rock with nothing. Take jobs that are each their own
