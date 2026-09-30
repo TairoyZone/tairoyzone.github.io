@@ -34,7 +34,7 @@ Skirmish, Poker. On the ship: Sailing, Navigation, Gunnery, Carpentry, Venting.
 And when a raider catches you: the Space Battle. Character creator. One
 currency, shop, backpack, chart. Islanders worth talking to: they remember what
 you did, know what is happening in the room, and pass word about you across the
-island.
+island. Befriend them, and court them if the feeling runs both ways.
 
 Conversations with islanders need a live internet connection. Everything else
 plays offline.
