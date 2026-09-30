@@ -61,8 +61,9 @@ files go over the game or footage, the clean ones on backgrounds you design.
 
 CREDITS
 Trojan Bulldog: design, code, world, writing.
-Characters and environments use Synty POLYGON asset packs and Mixamo animations,
-used under their respective licences.
+Characters and environments use Synty POLYGON asset packs, Microsoft Rocketbox
+motion capture (MIT, (c) 2020 Microsoft, github.com/microsoft/Microsoft-Rocketbox)
+and Mixamo animations, used under their respective licences.
 Music: Epic Medieval Music Pack I (purchased licence).
   Credits to pegonthetrack & ELVGames (https://elv-games.itch.io, https://linktr.ee/pegonthetrack).
 Gun deck songs by Kevin MacLeod (incompetech.com): "Galway", "Kings of Tara",
