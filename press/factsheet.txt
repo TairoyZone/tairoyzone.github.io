@@ -45,9 +45,11 @@ a bearing on the secret island. More mini-games along
 the way.
 
 CONTENTS OF THIS ZIP
-  screenshots/   nine 1280x720 PNG screenshots, captured on v1.1.1 and v1.3.1
-                 (Coin Drop, Lumberjacking and Dish Duty are from v1.3.1; the
-                 other six are from v1.1.1, 28 August 2026)
+  screenshots/   fifteen 1280x720 PNG screenshots. The six ship minigames
+                 (shot_11 to shot_16) were captured on 30 September 2026 from the
+                 development build just past v1.21.3. Of the nine island shots,
+                 Coin Drop, Lumberjacking and Dish Duty are from v1.3.1 and the
+                 other six from v1.1.1, 28 August 2026.
   logo/          wordmark at 600, 1200 and 2400 px wide (transparent),
                  wordmark on sky (1920x560), splash (1920x1080), icon (256x256)
   factsheet.txt  this file
