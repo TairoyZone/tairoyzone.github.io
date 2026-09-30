@@ -40,8 +40,8 @@ plays offline.
 
 PLANNED
 Eight Ordeals, each on an island of its own with a master at the end, every one
-a bearing on the secret island. More mini-games, and drop-in co-op for a few
-friends.
+a bearing on the secret island. More mini-games along
+the way.
 
 CONTENTS OF THIS ZIP
   screenshots/   nine 1280x720 PNG screenshots, captured on v1.1.1 and v1.3.1
