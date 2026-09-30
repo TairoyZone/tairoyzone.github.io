@@ -23,10 +23,11 @@ table and ship's station is its own mini-game, and so is every fight.
 
 THE DEMO
 You start on Cradle Rock with nothing. Take jobs that are each their own
-mini-game, play the tavern's tables, climb the five-rung Cradle Gym ladder, then
-walk into the Labyrinth, the first of the Ordeals. Then buy a ship at the sky
-dock, hire a crew and sail out: every duty station aboard is another mini-game,
-and a voyage can end in a battle in the sky and a boarding.
+mini-game, play the tavern's tables and climb the five-rung Cradle Gym ladder.
+Then cross the sky to Driftspar, where the Labyrinth, the first of the Ordeals,
+waits. Sign on with the ferry's crew, or buy a ship at the sky dock and hire
+your own: every duty station aboard is another mini-game, and a voyage can end
+in a battle in the sky and a boarding.
 
 Twelve mini-games. On the island: Mining, Coin Drop, Lumberjacking, Dish Duty,
 Skirmish, Poker. On the ship: Sailing, Navigation, Gunnery, Carpentry, Venting.
@@ -60,10 +61,19 @@ Characters and environments use Synty POLYGON asset packs and Mixamo animations,
 used under their respective licences.
 Music: Epic Medieval Music Pack I (purchased licence).
   Credits to pegonthetrack & ELVGames (https://elv-games.itch.io, https://linktr.ee/pegonthetrack).
+Gun deck songs by Kevin MacLeod (incompetech.com): "Galway", "Kings of Tara",
+  "Village Consort", "Netherworld Shanty", "Master of the Feast", "Pippin the
+  Hunchback", "Celtic Impulse", "Adventures in Adventureland", "Fiddles McGinty",
+  "Minstrel Guild". Licensed under Creative Commons: By Attribution 4.0 License
+  (http://creativecommons.org/licenses/by/4.0/).
 Sound: "Talking Synthesizer" by tcarisland (CC-BY-SA 4.0);
   Additional assets CC-By 4.0 GDQuest (https://www.gdquest.com/);
   Kenney (https://kenney.nl, CC0); "Keyboard soundpack 1" by unicaegames (CC0);
+  "Crunch sounds (cucumber)" by cogitollc (CC0);
   Universal Sound Effects packs (purchased licence).
+Voices: generated on the player's machine with sherpa-onnx (Apache-2.0) using
+  the Piper en_GB-vctk-medium voice model, trained on the CSTR VCTK Corpus
+  (University of Edinburgh), CC BY 4.0.
 
 CONTACT
 Email: tairoy.zone@gmail.com
