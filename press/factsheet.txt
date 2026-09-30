@@ -50,12 +50,14 @@ CONTENTS OF THIS ZIP
                  development build just past v1.21.3. Of the nine island shots,
                  Coin Drop, Lumberjacking and Dish Duty are from v1.3.1 and the
                  other six from v1.1.1, 28 August 2026.
-  logo/          wordmark at 600, 1200 and 2400 px wide (transparent),
-                 wordmark on sky (1920x560), splash (1920x1080), icon (256x256)
+  logo/          the logo at 600, 1200 and 2400 px wide (transparent), with its
+                 rim of light and clean; the logo on sky (1920x560), splash
+                 (1920x1080), icon (256x256)
   factsheet.txt  this file
 
-The wordmark is the logo. Please use it as supplied: no recolouring, no added
-emblem, never re-typeset as text.
+The logo is the name, cut from the game's own blue gem. Please use it as
+supplied: no recolouring, no added emblem, never re-typeset as text. The rimmed
+files go over the game or footage, the clean ones on backgrounds you design.
 
 CREDITS
 Trojan Bulldog: design, code, world, writing.
