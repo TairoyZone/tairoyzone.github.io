@@ -111,6 +111,8 @@ h3{font-size:var(--fs-title);line-height:1.3;color:var(--text)}
 @media(min-width:900px){.headline{font-size:var(--fs-hero)}.sub{max-width:44ch}}
 .hero .cta-row{justify-content:center;margin-top:var(--sp-lg)}
 @media(max-width:479px){.hero .cta-row .btn{flex:1 1 100%}}
+/* The browser build is for computers: no Play-in-browser button or Browser chip on a phone-width screen or a touch-only device */
+@media(max-width:479px),(hover:none) and (pointer:coarse){.btn-web,.chip.chip-web{display:none}}
 .clip{position:relative;margin:var(--sp-xl) auto 0;max-width:960px;aspect-ratio:16/9;max-height:min(540px,60vh);background:var(--slot);border:1px solid var(--border-hair);border-radius:var(--radius-sm);overflow:hidden;box-shadow:var(--shadow-soft)}
 .clip video,.clip .still{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 /* The trailer. preload=none so 10 MB costs nothing until someone presses play. */
@@ -360,11 +362,11 @@ main>section:nth-of-type(even){background:color-mix(in srgb,var(--panel) 45%,var
 
     <div class="cta-row">
       <a class="btn btn-primary" href="https://tairoyzone.itch.io/shivaliva-shanty">Download free on itch</a>
-      <a class="btn" href="https://tairoyzone.itch.io/shivaliva-shanty">Play in your browser</a>
+      <a class="btn btn-web" href="https://tairoyzone.itch.io/shivaliva-shanty">Play in your browser</a>
       <a class="btn" href="https://tairoyzone.itch.io/shivaliva-shanty/devlog">Read the devlog</a>
       <a class="btn btn-quiet" href="press/">Press kit</a>
     </div>
-    <p class="hero-facts" aria-label="At a glance"><span class="chip">Free<b>name your price</b></span><span class="chip">Windows<b>419 MB</b></span><span class="chip">Browser<b>no install</b></span><span class="chip">Version<b>2.0.1-alpha</b></span><span class="chip">Godot<b>4.7</b></span></p>
+    <p class="hero-facts" aria-label="At a glance"><span class="chip">Free<b>name your price</b></span><span class="chip">Windows<b>419 MB</b></span><span class="chip chip-web">Browser<b>no install</b></span><span class="chip">Version<b>2.0.1-alpha</b></span><span class="chip">Godot<b>4.7</b></span></p>
 
 
     <figure class="trailer">
@@ -473,7 +475,7 @@ main>section:nth-of-type(even){background:color-mix(in srgb,var(--panel) 45%,var
 
     <div class="cta-row" style="margin-top:var(--sp-xl)">
       <a class="btn btn-primary" href="https://tairoyzone.itch.io/shivaliva-shanty">Download free on itch</a>
-      <a class="btn" href="https://tairoyzone.itch.io/shivaliva-shanty">Play in your browser</a>
+      <a class="btn btn-web" href="https://tairoyzone.itch.io/shivaliva-shanty">Play in your browser</a>
     </div>
   </div>
 </section>
@@ -611,7 +613,7 @@ main>section:nth-of-type(even){background:color-mix(in srgb,var(--panel) 45%,var
     <div class="pane" style="margin-top:var(--sp-xl)">
       <div class="cta-row">
         <a class="btn btn-primary" href="https://tairoyzone.itch.io/shivaliva-shanty">Download free on itch</a>
-        <a class="btn" href="https://tairoyzone.itch.io/shivaliva-shanty">Play in your browser</a>
+        <a class="btn btn-web" href="https://tairoyzone.itch.io/shivaliva-shanty">Play in your browser</a>
         <a class="btn" href="https://tairoyzone.itch.io/shivaliva-shanty/devlog">Read the devlog</a>
         <a class="btn" href="https://x.com/trojanatoplat" rel="me">Follow on X</a>
       </div>
