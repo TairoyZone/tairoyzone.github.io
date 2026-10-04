@@ -8,7 +8,7 @@ Genre:            Single-player puzzle-skill adventure among floating sky-island
 Status:           Public demo, in active development. Public on itch.io since
                   June 2026; versioned builds from 16 July 2026 (v0.1.0).
 Current version:  v2.0.1-alpha (4 October 2026)
-Platform:         Windows (PC)
+Platform:         Windows (PC), and in the browser on itch.io
 Price:            Free, name your price
 Download size:    About 419 MB
 Engine:           Godot 4.7
