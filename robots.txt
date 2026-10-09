@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://shivalivaleveling.com/sitemap.xml
+Sitemap: https://play.shivalivaleveling.com/sitemap.xml
