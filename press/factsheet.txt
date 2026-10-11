@@ -31,7 +31,7 @@ your own: every duty station aboard is another mini-game, and a voyage can end
 in a battle in the sky and a boarding.
 
 Twelve mini-games. On the island: Mining, Coin Drop, Lumberjacking, Dish Duty,
-Skirmish, Poker. On the ship: Sailing, Navigation, Gunnery, Carpentry, Venting.
+Skirmish, Poker. On the ship: Stoking, Navigation, Gunnery, Carpentry, Venting.
 And when a raider catches you: the Space Battle. Character creator. One
 currency, shop, backpack, chart. Islanders worth talking to: they remember what
 you did, know what is happening in the room, and pass word about you across the
@@ -47,7 +47,8 @@ the way.
 
 CONTENTS OF THIS ZIP
   screenshots/   seventeen PNG screenshots, all captured on 11 October 2026
-                 from v2.0.5-alpha, at the High graphics setting: the twelve
+                 at the High graphics setting, sixteen from v2.0.5-alpha and
+                 Stoking from v2.0.7-alpha: the twelve
                  mini-games, the job notice, the outfitter and the character
                  creator (1280x720), and the two tavern shots, the islanders
                  of an evening and a courting moment (1920x1080).
