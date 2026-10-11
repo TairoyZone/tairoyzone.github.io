@@ -2,32 +2,65 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://play.shivalivaleveling.com/</loc>
-    <lastmod>2026-09-03</lastmod>
+    <lastmod>2026-10-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
-    <image:image><image:loc>https://play.shivalivaleveling.com/assets/shot_1_skirmish_duel.png</image:loc><image:title>A Skirmish duel at the Cradle Gym</image:title></image:image>
-    <image:image><image:loc>https://play.shivalivaleveling.com/assets/shot_3_poker_table.png</image:loc><image:title>Poker at the inn</image:title></image:image>
-    <image:image><image:loc>https://play.shivalivaleveling.com/assets/shot_8_coin_drop.png</image:loc><image:title>Coin Drop in the tavern</image:title></image:image>
-    <image:image><image:loc>https://play.shivalivaleveling.com/assets/shot_4_mining_board.png</image:loc><image:title>Mining</image:title></image:image>
-    <image:image><image:loc>https://play.shivalivaleveling.com/assets/shot_9_lumberjacking.png</image:loc><image:title>Lumberjacking in the grove</image:title></image:image>
-    <image:image><image:loc>https://play.shivalivaleveling.com/assets/shot_10_dish_duty.png</image:loc><image:title>Dish Duty at the tavern sink</image:title></image:image>
-    <image:image><image:loc>https://play.shivalivaleveling.com/assets/shot_7_create_hero.png</image:loc><image:title>Character creator</image:title></image:image>
-    <image:image><image:loc>https://play.shivalivaleveling.com/assets/shot_6_outfitter.png</image:loc><image:title>The outfitter</image:title></image:image>
-    <image:image><image:loc>https://play.shivalivaleveling.com/assets/shot_5_wanted_job.png</image:loc><image:title>Taking a job on the island</image:title></image:image>
+    <image:image><image:loc>https://play.shivalivaleveling.com/assets/shots/skirmish.png</image:loc><image:title>A Skirmish duel</image:title></image:image>
+    <image:image><image:loc>https://play.shivalivaleveling.com/assets/shots/poker.png</image:loc><image:title>Poker at the inn</image:title></image:image>
+    <image:image><image:loc>https://play.shivalivaleveling.com/assets/shots/coin-drop.png</image:loc><image:title>Coin Drop</image:title></image:image>
+    <image:image><image:loc>https://play.shivalivaleveling.com/assets/shots/mining.png</image:loc><image:title>Mining</image:title></image:image>
+    <image:image><image:loc>https://play.shivalivaleveling.com/assets/shots/lumberjacking.png</image:loc><image:title>Lumberjacking</image:title></image:image>
+    <image:image><image:loc>https://play.shivalivaleveling.com/assets/shots/dish-duty.png</image:loc><image:title>Dish Duty</image:title></image:image>
+    <image:image><image:loc>https://play.shivalivaleveling.com/assets/shots/gunnery.png</image:loc><image:title>Gunnery on the gun deck</image:title></image:image>
+    <image:image><image:loc>https://play.shivalivaleveling.com/assets/shots/space-battle.png</image:loc><image:title>The Space Battle</image:title></image:image>
+    <image:image><image:loc>https://play.shivalivaleveling.com/assets/shots/sailing.png</image:loc><image:title>Sailing</image:title></image:image>
+    <image:image><image:loc>https://play.shivalivaleveling.com/assets/shots/navigation.png</image:loc><image:title>Navigation</image:title></image:image>
+    <image:image><image:loc>https://play.shivalivaleveling.com/assets/shots/venting.png</image:loc><image:title>Venting</image:title></image:image>
+    <image:image><image:loc>https://play.shivalivaleveling.com/assets/shots/carpentry.png</image:loc><image:title>Carpentry</image:title></image:image>
+    <image:image><image:loc>https://play.shivalivaleveling.com/assets/shots/romance.png</image:loc><image:title>Courting in the tavern</image:title></image:image>
+    <image:image><image:loc>https://play.shivalivaleveling.com/assets/shots/create-hero.png</image:loc><image:title>Character creator</image:title></image:image>
+    <image:image><image:loc>https://play.shivalivaleveling.com/assets/shots/outfitter.png</image:loc><image:title>The outfitter</image:title></image:image>
+    <image:image><image:loc>https://play.shivalivaleveling.com/assets/shots/wanted-job.png</image:loc><image:title>Taking a job on the island</image:title></image:image>
+  </url>
+  <url>
+    <loc>https://play.shivalivaleveling.com/guide/</loc>
+    <lastmod>2026-10-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image><image:loc>https://play.shivalivaleveling.com/assets/shots/skirmish.png</image:loc><image:title>A Skirmish duel</image:title></image:image>
+    <image:image><image:loc>https://play.shivalivaleveling.com/assets/shots/poker.png</image:loc><image:title>Poker at the inn</image:title></image:image>
+    <image:image><image:loc>https://play.shivalivaleveling.com/assets/shots/coin-drop.png</image:loc><image:title>Coin Drop</image:title></image:image>
+    <image:image><image:loc>https://play.shivalivaleveling.com/assets/shots/mining.png</image:loc><image:title>Mining</image:title></image:image>
+    <image:image><image:loc>https://play.shivalivaleveling.com/assets/shots/lumberjacking.png</image:loc><image:title>Lumberjacking</image:title></image:image>
+    <image:image><image:loc>https://play.shivalivaleveling.com/assets/shots/dish-duty.png</image:loc><image:title>Dish Duty</image:title></image:image>
+    <image:image><image:loc>https://play.shivalivaleveling.com/assets/shots/gunnery.png</image:loc><image:title>Gunnery on the gun deck</image:title></image:image>
+    <image:image><image:loc>https://play.shivalivaleveling.com/assets/shots/space-battle.png</image:loc><image:title>The Space Battle</image:title></image:image>
+    <image:image><image:loc>https://play.shivalivaleveling.com/assets/shots/sailing.png</image:loc><image:title>Sailing</image:title></image:image>
+    <image:image><image:loc>https://play.shivalivaleveling.com/assets/shots/navigation.png</image:loc><image:title>Navigation</image:title></image:image>
+    <image:image><image:loc>https://play.shivalivaleveling.com/assets/shots/venting.png</image:loc><image:title>Venting</image:title></image:image>
+    <image:image><image:loc>https://play.shivalivaleveling.com/assets/shots/carpentry.png</image:loc><image:title>Carpentry</image:title></image:image>
   </url>
   <url>
     <loc>https://play.shivalivaleveling.com/press/</loc>
-    <lastmod>2026-09-03</lastmod>
+    <lastmod>2026-10-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <image:image><image:loc>https://play.shivalivaleveling.com/assets/shot_1_skirmish_duel.png</image:loc><image:title>A Skirmish duel at the Cradle Gym</image:title></image:image>
-    <image:image><image:loc>https://play.shivalivaleveling.com/assets/shot_3_poker_table.png</image:loc><image:title>Poker at the inn</image:title></image:image>
-    <image:image><image:loc>https://play.shivalivaleveling.com/assets/shot_8_coin_drop.png</image:loc><image:title>Coin Drop in the tavern</image:title></image:image>
-    <image:image><image:loc>https://play.shivalivaleveling.com/assets/shot_4_mining_board.png</image:loc><image:title>Mining</image:title></image:image>
-    <image:image><image:loc>https://play.shivalivaleveling.com/assets/shot_9_lumberjacking.png</image:loc><image:title>Lumberjacking in the grove</image:title></image:image>
-    <image:image><image:loc>https://play.shivalivaleveling.com/assets/shot_10_dish_duty.png</image:loc><image:title>Dish Duty at the tavern sink</image:title></image:image>
-    <image:image><image:loc>https://play.shivalivaleveling.com/assets/shot_7_create_hero.png</image:loc><image:title>Character creator</image:title></image:image>
-    <image:image><image:loc>https://play.shivalivaleveling.com/assets/shot_6_outfitter.png</image:loc><image:title>The outfitter</image:title></image:image>
-    <image:image><image:loc>https://play.shivalivaleveling.com/assets/shot_5_wanted_job.png</image:loc><image:title>Taking a job on the island</image:title></image:image>
+    <image:image><image:loc>https://play.shivalivaleveling.com/assets/shots/skirmish.png</image:loc><image:title>A Skirmish duel</image:title></image:image>
+    <image:image><image:loc>https://play.shivalivaleveling.com/assets/shots/poker.png</image:loc><image:title>Poker at the inn</image:title></image:image>
+    <image:image><image:loc>https://play.shivalivaleveling.com/assets/shots/coin-drop.png</image:loc><image:title>Coin Drop</image:title></image:image>
+    <image:image><image:loc>https://play.shivalivaleveling.com/assets/shots/mining.png</image:loc><image:title>Mining</image:title></image:image>
+    <image:image><image:loc>https://play.shivalivaleveling.com/assets/shots/lumberjacking.png</image:loc><image:title>Lumberjacking</image:title></image:image>
+    <image:image><image:loc>https://play.shivalivaleveling.com/assets/shots/dish-duty.png</image:loc><image:title>Dish Duty</image:title></image:image>
+    <image:image><image:loc>https://play.shivalivaleveling.com/assets/shots/gunnery.png</image:loc><image:title>Gunnery on the gun deck</image:title></image:image>
+    <image:image><image:loc>https://play.shivalivaleveling.com/assets/shots/space-battle.png</image:loc><image:title>The Space Battle</image:title></image:image>
+    <image:image><image:loc>https://play.shivalivaleveling.com/assets/shots/sailing.png</image:loc><image:title>Sailing</image:title></image:image>
+    <image:image><image:loc>https://play.shivalivaleveling.com/assets/shots/navigation.png</image:loc><image:title>Navigation</image:title></image:image>
+    <image:image><image:loc>https://play.shivalivaleveling.com/assets/shots/venting.png</image:loc><image:title>Venting</image:title></image:image>
+    <image:image><image:loc>https://play.shivalivaleveling.com/assets/shots/carpentry.png</image:loc><image:title>Carpentry</image:title></image:image>
+    <image:image><image:loc>https://play.shivalivaleveling.com/assets/shots/islanders.png</image:loc><image:title>The tavern of an evening</image:title></image:image>
+    <image:image><image:loc>https://play.shivalivaleveling.com/assets/shots/romance.png</image:loc><image:title>Courting in the tavern</image:title></image:image>
+    <image:image><image:loc>https://play.shivalivaleveling.com/assets/shots/wanted-job.png</image:loc><image:title>Taking a job on the island</image:title></image:image>
+    <image:image><image:loc>https://play.shivalivaleveling.com/assets/shots/outfitter.png</image:loc><image:title>The outfitter</image:title></image:image>
+    <image:image><image:loc>https://play.shivalivaleveling.com/assets/shots/create-hero.png</image:loc><image:title>Character creator</image:title></image:image>
   </url>
 </urlset>

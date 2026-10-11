@@ -9,7 +9,7 @@
 <meta property="og:url" content="https://play.shivalivaleveling.com/press/">
 <meta property="og:title" content="Shivaliva press kit">
 <meta property="og:description" content="Press kit for Shivaliva, a free single-player puzzle-skill adventure among floating sky-islands. Factsheet, screenshots, videos, logo and contact.">
-<meta property="og:image" content="https://play.shivalivaleveling.com/assets/social_card_v5.jpg">
+<meta property="og:image" content="https://play.shivalivaleveling.com/assets/social_card_v6.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
@@ -19,113 +19,92 @@
 <meta name="twitter:creator" content="@trojanatoplat">
 <meta name="twitter:title" content="Shivaliva press kit">
 <meta name="twitter:description" content="Press kit for Shivaliva, a free single-player puzzle-skill adventure among floating sky-islands. Factsheet, screenshots, videos, logo and contact.">
-<meta name="twitter:image" content="https://play.shivalivaleveling.com/assets/social_card_v5.jpg">
+<meta name="twitter:image" content="https://play.shivalivaleveling.com/assets/social_card_v6.jpg">
+<meta name="theme-color" content="#F8F5EE">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Shivaliva","item":"https://play.shivalivaleveling.com/"},{"@type":"ListItem","position":2,"name":"Press kit","item":"https://play.shivalivaleveling.com/press/"}]}</script>
 <link rel="canonical" href="https://play.shivalivaleveling.com/press/">
 <link rel="alternate" type="application/rss+xml" title="Shivaliva devlog" href="https://tairoyzone.itch.io/shivaliva-shanty/devlog.rss">
 <link rel="icon" href="../assets/icon_32.png" sizes="32x32" type="image/png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@600;700&family=Source+Sans+3:ital,wght@0,400;0,600;1,400&display=swap">
+<link rel="stylesheet" href="../assets/site.css">
 <style>
-:root{
-  --bg:#08101A; --bg-void:#02060D; --panel:#121B27; --card:#202A36; --slot:#050C14;
-  --panel-glass:rgba(18,27,39,0.88);
-  --border:#B8A17A; --border-hair:rgba(184,161,122,0.45); --border-card:rgba(184,161,122,0.75); --border-chip:rgba(184,161,122,0.22);
-  --accent:#FFC845; --accent-glow:rgba(255,200,69,0.34); --accent-wash-hover:rgba(255,200,69,0.10);
-  --signal-azure:#76D9FF;
-  --text:#EFE7D8; --text-muted:#AAA498; --text-caption:#C6BDA8;
-  --shadow-soft:0 3px 14px rgba(0,0,0,0.42);
-  --font-ui:'DejaVu Sans','Bitstream Vera Sans',Verdana,Geneva,sans-serif;
-  --fs-caption:12px; --fs-small:14px; --fs-body:18px; --fs-title:22px; --fs-heading:28px; --fs-display:36px;
-  --radius-xs:4px; --radius-sm:8px; --radius-pill:999px;
-  --sp-xs:4px; --sp-sm:8px; --sp-md:12px; --sp-lg:16px; --sp-xl:24px; --sp-xxl:32px;
-  --dur-fast:0.15s;
-}
-*{box-sizing:border-box}
-html{background:var(--bg-void);scroll-behavior:smooth}
-body{margin:0;background:var(--bg);color:var(--text);font-family:var(--font-ui);font-size:16px;line-height:1.55;overflow-x:hidden}
-a{color:var(--text);text-decoration:underline;text-decoration-color:var(--border-hair);text-underline-offset:3px;transition:color var(--dur-fast)}
-a:hover{color:var(--accent);text-decoration-color:var(--accent)}
-a:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
-img,video{max-width:100%;height:auto;display:block}
-.wrap{max-width:1100px;margin:0 auto;padding:0 var(--sp-lg)}
-
-header.masthead{position:relative;isolation:isolate;overflow:hidden;padding:var(--sp-xl) 0 var(--sp-xl);text-align:center;border-bottom:1px solid var(--border-chip)}
-header.masthead::before{content:"";position:absolute;inset:0;z-index:-2;background:url(../assets/hero_bg.jpg) center 40%/cover no-repeat;opacity:.45}
-header.masthead::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,color-mix(in srgb,var(--bg-void) 70%,transparent) 0%,color-mix(in srgb,var(--bg) 40%,transparent) 45%,var(--bg) 100%)}
-header.masthead h1 img{filter:drop-shadow(0 6px 18px color-mix(in srgb,var(--bg-void) 70%,transparent))}
-.crumbs{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:var(--sp-md) var(--sp-lg);margin-bottom:var(--sp-xl);font-size:var(--fs-small);text-align:left}
-.crumbs a{text-decoration:none;color:var(--text-caption)}
-.crumbs a:hover{color:var(--accent)}
-.crumbs .primary{margin-top:0;color:var(--accent)}
-.crumbs .home::before{content:"\25C6";color:var(--accent);font-size:10px;margin-right:var(--sp-sm);vertical-align:1px}
-header.masthead h1{margin:0}
-header.masthead img{margin:0 auto;width:min(640px,100%)}
-header.masthead p{margin:var(--sp-lg) 0 0;color:var(--text-caption);font-size:var(--fs-small);letter-spacing:.08em;text-transform:uppercase}
-
-nav.toc{position:sticky;top:0;z-index:5;background:var(--panel-glass);backdrop-filter:blur(6px);border-bottom:1px solid var(--border-chip)}
-nav.toc ul{list-style:none;margin:0 auto;padding:var(--sp-sm) var(--sp-lg);max-width:1100px;display:flex;flex-wrap:wrap;gap:var(--sp-xs) var(--sp-lg);font-size:var(--fs-small)}
-nav.toc a{text-decoration:none;color:var(--text-caption);padding:var(--sp-xs) 0}
-nav.toc a:hover{color:var(--accent)}
-@media (max-width:899px){nav.toc{position:static}}
-
-.layout{display:grid;grid-template-columns:minmax(0,1fr);gap:var(--sp-xxl);padding:var(--sp-xxl) 0}
-@media (min-width:900px){.layout{grid-template-columns:300px minmax(0,1fr);align-items:start}}
-aside.factsheet{background:var(--panel);border:1px solid var(--border-hair);border-radius:var(--radius-sm);padding:var(--sp-xl);box-shadow:var(--shadow-soft)}
-@media (min-width:900px){aside.factsheet{position:sticky;top:56px;max-height:calc(100vh - 72px);overflow-y:auto}}
-aside.factsheet h2{margin-top:0}
-aside.factsheet dl{margin:0;display:grid;grid-template-columns:auto;gap:var(--sp-md) 0}
-aside.factsheet dt{font-size:var(--fs-caption);letter-spacing:.08em;text-transform:uppercase;color:var(--text-muted)}
-aside.factsheet dd{margin:0 0 var(--sp-xs);font-size:15px;overflow-wrap:anywhere}
-.primary{display:inline-block;margin-top:var(--sp-lg);padding:var(--sp-sm) var(--sp-lg);border:1px solid var(--accent);border-radius:var(--radius-xs);color:var(--accent);text-decoration:none;font-size:var(--fs-small);letter-spacing:.04em}
-.primary:hover{background:var(--accent-wash-hover);box-shadow:0 0 12px var(--accent-glow)}
-
-main{min-width:0}
-section{margin:0 0 var(--sp-xxl);scroll-margin-top:60px}
-h2{font-size:var(--fs-heading);font-weight:700;color:var(--accent);margin:0 0 var(--sp-lg);padding-bottom:var(--sp-sm);border-bottom:1px solid var(--border-hair);letter-spacing:.01em}
-h3{font-size:var(--fs-title);font-weight:700;color:var(--text);margin:var(--sp-xl) 0 var(--sp-sm)}
-p{margin:0 0 var(--sp-md);font-size:17px}
-ul{padding-left:1.2em;margin:0 0 var(--sp-md)}
-li{margin-bottom:var(--sp-sm)}
-li strong{color:var(--text)}
-.muted{color:var(--text-muted);font-size:var(--fs-small)}
-.note{border-left:2px solid var(--border-hair);padding:var(--sp-sm) var(--sp-lg);background:var(--panel);border-radius:0 var(--radius-xs) var(--radius-xs) 0;color:var(--text-caption);font-size:15px;margin:var(--sp-lg) 0}
-
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:var(--sp-lg)}
-figure{margin:0;background:var(--panel);border:1px solid var(--border-chip);border-radius:var(--radius-sm);overflow:hidden}
-figure a{display:block}
-figure img{aspect-ratio:16/9;object-fit:cover;width:100%}
-figure video{width:100%;background:var(--slot)}
-figcaption{padding:var(--sp-sm) var(--sp-md);font-size:var(--fs-small);color:var(--text-caption)}
-figcaption span{display:block;color:var(--text-muted);font-size:var(--fs-caption)}
-.logos figure img{aspect-ratio:auto;object-fit:contain;padding:var(--sp-lg);background:var(--slot)}
-.logos figure.icon img{width:128px;margin:0 auto}
-.logos figure.sky img{padding:0}
-
-table{width:100%;border-collapse:collapse;font-size:var(--fs-small)}
-.tbl{overflow-x:auto;margin:0 0 var(--sp-lg);border:1px solid var(--border-chip);border-radius:var(--radius-xs)}
-th,td{text-align:left;vertical-align:top;padding:var(--sp-sm) var(--sp-md);border-bottom:1px solid var(--border-chip)}
-th{color:var(--text-muted);font-weight:normal;font-size:var(--fs-caption);letter-spacing:.06em;text-transform:uppercase;background:var(--panel)}
-tr:last-child td{border-bottom:0}
-td code{font-family:inherit;color:var(--text-caption)}
-
-footer{border-top:1px solid var(--border-chip);padding:var(--sp-xl) 0 var(--sp-xxl);color:var(--text-muted);font-size:var(--fs-caption);text-align:center}
+/* the press kit's own layout (presskit() order); the shared language is ../assets/site.css */
+.press-hero { padding: clamp(36px, 5vw, 72px) 0 clamp(20px, 3vw, 36px); display: grid; gap: 16px; }
+.press-hero .mark { width: min(100%, 460px); height: auto; }
+.press-hero .kicker { margin-top: 4px; }
+.press-hero .btn-row { margin-top: 8px; }
+/* "Download presskit.zip (12.4 MB)" is one line on a 375 px phone only with a little less air */
+@media (max-width: 400px) { .press-hero .btn { padding-inline: 16px; letter-spacing: 0.08em; } }
+.toc { position: sticky; top: 66px; z-index: 5; background: rgba(248, 245, 238, 0.96); box-shadow: 0 1px 0 var(--line); }
+.toc ul { display: flex; flex-wrap: wrap; gap: 0 22px; padding: 6px 0; }
+.toc a { display: inline-flex; align-items: center; min-height: 40px; font: 700 0.74rem/1 var(--font-display); letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-2); }
+.toc a:hover { color: var(--gem); text-decoration: none; }
+@media (max-width: 899px) { .toc { position: static; } }
+.layout { display: grid; gap: clamp(32px, 4vw, 56px); padding: clamp(32px, 4vw, 56px) 0 clamp(56px, 7vw, 96px); }
+@media (min-width: 960px) { .layout { grid-template-columns: 300px minmax(0, 1fr); align-items: start; } }
+.factsheet { --c: 14px; background: var(--white); padding: 26px 26px 28px; display: grid; gap: 14px; }
+@media (min-width: 960px) { .factsheet { position: sticky; top: 130px; max-height: calc(100vh - 150px); overflow-y: auto; } }
+.factsheet h2 { font-size: 1.5rem; }
+.factsheet dl { display: grid; gap: 12px; }
+.factsheet dt { font: 700 0.7rem/1.4 var(--font-display); letter-spacing: 0.16em; text-transform: uppercase; color: var(--ink-3); }
+.factsheet dd { font-size: 0.98rem; color: var(--ink); overflow-wrap: anywhere; }
+.factsheet .small { font-size: 0.88rem; }
+.content { min-width: 0; display: grid; gap: clamp(48px, 6vw, 72px); }
+.content section { padding: 0; display: grid; gap: 16px; scroll-margin-top: 130px; }
+.content h2 { font-size: clamp(1.7rem, 3vw, 2.2rem); padding-bottom: 12px; border-bottom: 1px solid var(--line-2); }
+.content h3 { font-size: 1.2rem; margin-top: 8px; }
+.content p, .content li { color: var(--ink-2); }
+.content ul.list { display: grid; gap: 12px; }
+.content ul.list li { position: relative; padding-left: 22px; }
+.content ul.list li::before { content: ""; position: absolute; left: 2px; top: 0.62em; width: 7px; height: 7px; transform: rotate(45deg); background: var(--gem); }
+.content ul.list strong { color: var(--ink); }
+.note { --c: 10px; padding: 14px 18px; background: var(--mist); color: var(--ink-2); }
+.grid { display: grid; gap: 18px; grid-template-columns: repeat(auto-fill, minmax(min(100%, 250px), 1fr)); }
+.grid figure { display: grid; gap: 10px; align-content: start; }
+.grid figcaption { font-size: 0.95rem; color: var(--ink); }
+.grid figcaption span { display: block; color: var(--ink-3); font-size: 0.86rem; }
+.grid video { width: 100%; aspect-ratio: 16 / 9; background: #0b1220; }
+.logos .in { display: grid; place-items: center; min-height: 160px; background: var(--white); }
+.logos .in img { aspect-ratio: auto; object-fit: contain; width: auto; max-width: 86%; max-height: 150px; padding: 12px 0; }
+.logos .sky .in img { max-width: 100%; max-height: none; width: 100%; padding: 0; aspect-ratio: auto; object-fit: cover; }
+.tbl { overflow-x: auto; min-width: 0; background: var(--white); }   /* a grid item: without min-width 0 it grows to the table and pushes a phone's page wide */
+table { width: 100%; border-collapse: collapse; font-size: 0.93rem; }
+th, td { text-align: left; vertical-align: top; padding: 10px 14px; border-bottom: 1px solid var(--line); color: var(--ink-2); }
+th { font: 700 0.7rem/1.4 var(--font-display); letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-3); background: var(--paper-2); }
+tr:last-child td { border-bottom: 0; }
+td code { font: inherit; color: var(--ink); }
+.press-foot { padding: 28px 0 56px; border-top: 1px solid var(--line); text-align: center; color: var(--ink-3); font-size: 0.95rem; }
 </style>
 </head>
 <body>
 
-<header class="masthead">
+<header class="topbar">
   <div class="wrap">
-    <div class="crumbs">
-      <a class="home" href="../">Shivaliva, the site</a>
-      <a class="primary" href="presskit.zip">Download presskit.zip (8.8 MB)</a>
-    </div>
-    <h1><img src="../assets/logo_1200.png" width="1200" height="290" alt="Shivaliva"></h1>
-    <p>Press kit</p>
+    <a class="brand" href="../" aria-label="Shivaliva, the site"><img src="../assets/icon_256.png" alt="" width="34" height="34"><span>Shivaliva</span></a>
+    <nav class="nav" aria-label="Site">
+      <a href="../#games">Mini-games</a>
+      <a href="../guide/">How to play</a>
+      <a href="../#screenshots">Screenshots</a>
+    </nav>
+    <a class="btn btn-gem" href="https://tairoyzone.itch.io/shivaliva-shanty">Download free</a>
   </div>
 </header>
 
+<section class="press-hero" aria-label="Press kit">
+  <div class="wrap" style="display:grid;gap:16px;justify-items:start">
+    <span class="kicker"><span class="gem" aria-hidden="true"></span>Press kit</span>
+    <h1 style="margin:0;line-height:0"><img class="mark" src="../assets/logo_clean_1200.png" width="1200" height="280" alt="Shivaliva"></h1>
+    <div class="btn-row">
+      <a class="btn btn-gem" href="presskit.zip"><span class="gem" aria-hidden="true"></span>Download presskit.zip (12.4 MB)</a>
+      <a class="btn" href="factsheet.txt">factsheet.txt</a>
+    </div>
+  </div>
+</section>
+
 <nav class="toc" aria-label="Sections">
-  <ul>
-    <li><a href="../">Site</a></li>
+  <ul class="wrap">
     <li><a href="#factsheet">Factsheet</a></li>
     <li><a href="#description">Description</a></li>
     <li><a href="#history">History</a></li>
@@ -140,7 +119,7 @@ footer{border-top:1px solid var(--border-chip);padding:var(--sp-xl) 0 var(--sp-x
 
 <div class="wrap layout">
 
-<aside class="factsheet" id="factsheet">
+<aside class="factsheet cut" id="factsheet">
   <h2>Factsheet</h2>
   <dl>
     <dt>Developer</dt>
@@ -166,12 +145,12 @@ footer{border-top:1px solid var(--border-chip);padding:var(--sp-xl) 0 var(--sp-x
     <dt>Social</dt>
     <dd><a href="https://x.com/trojanatoplat">@trojanatoplat on X</a></dd>
     <dt>Press kit download</dt>
-    <dd><a href="presskit.zip">presskit.zip</a><br><span class="muted">15 screenshots 1280x720 PNG; wordmark 600/1200/2400, wordmark on sky 1920x560, splash 1920x1080, icon 256; <a href="factsheet.txt">factsheet.txt</a></span></dd>
+    <dd><a href="presskit.zip">presskit.zip</a><br><span class="small">17 screenshots (PNG); the logo at 600, 1200 and 2400 px with and without its rim of light, the logo on sky 1920x560, splash 1920x1080, icon 256 and 512; <a href="factsheet.txt">factsheet.txt</a></span></dd>
   </dl>
-  <a class="primary" href="https://tairoyzone.itch.io/shivaliva-shanty">Get the demo on itch.io</a>
+  <a class="btn btn-gem" href="https://tairoyzone.itch.io/shivaliva-shanty" style="justify-self:start;margin-top:6px">Get the demo on itch.io</a>
 </aside>
 
-<main>
+<main class="content">
 
 <section id="description">
   <h2>Description</h2>
@@ -180,7 +159,7 @@ footer{border-top:1px solid var(--border-chip);padding:var(--sp-xl) 0 var(--sp-x
   <p>The demo starts you on Cradle Rock with nothing. You take work at the mine, the grove, the tavern sink and the coin table, and each job is a different puzzle with its own rules. You sit down at the inn's poker table. You walk into the Cradle Gym and climb its five-rung ladder in Skirmish, a two-board versus block puzzle where your cleared lines land on your rival's floor. Topping the ladder opens the Labyrinth, the first of the Ordeals, which stands across the sky on Driftspar, and its beasts wait one at a time. To get there you sign on with the ferry's crew, or buy a ship at the sky dock and hire your own. Every duty station aboard is another mini-game, and a voyage can end in a battle in the sky and a boarding.</p>
   <p>The islanders are the thing players find on their own. Nobody has to talk to anyone, but walk up to any of them and they know where they are standing, what they are doing, and who just won at the table. They remember your last conversation the next day. Word about you travels: win at the gym and the barkeep has heard about it before you reach the bar. Needle a fighter about their record and they may challenge you for it.</p>
   <p>It is a spiritual successor to Puzzle Pirates, made by one person in Godot, and grown into its own thing: a sky instead of a sea, the Stardust you sail through between the islands, and a crew of your own.</p>
-  <div class="note">Conversations with islanders need a live internet connection. Everything else in the game plays offline.</div>
+  <div class="note cut">Conversations with islanders need a live internet connection. Everything else in the game plays offline.</div>
 </section>
 
 <section id="history">
@@ -196,12 +175,12 @@ footer{border-top:1px solid var(--border-chip);padding:var(--sp-xl) 0 var(--sp-x
 
 <section id="features">
   <h2>Features</h2>
-  <p class="muted">What the public demo contains.</p>
-  <ul>
+  <p class="small">What the public demo contains.</p>
+  <ul class="list">
     <li><strong>Cradle Rock, Driftspar, and a ship to crew.</strong> A small island with a tavern, a forge, a market, a gym, a mine, a grove and a sky dock, and a rock across the sky where the Labyrinth stands. Sign on with the ferry's crew, or buy a ship at the dock, hire a crew and sail out.</li>
     <li><strong>Twelve mini-games.</strong> On the island: <strong>Mining</strong> (a forage grid carved into rock), <strong>Coin Drop</strong> (the tavern's coin table, a pegboard the coins bounce down), <strong>Lumberjacking</strong> (a log frame in the grove), <strong>Dish Duty</strong> (the tavern sink), <strong>Skirmish</strong> (a two-board versus block puzzle: clear lines and steel lands on your rival's floor) and <strong>Poker</strong> (the inn's table, ten stools round it). On the ship: <strong>Sailing</strong> (crewing the rigging), <strong>Navigation</strong> (a bubble shooter at the wheel that steers the leg), <strong>Gunnery</strong> (ramming powder, wad and shot into the cannons as the deck brings them down), <strong>Carpentry</strong> (sealing the holes a battle opens in the hull) and <strong>Venting</strong> (clearing the Stardust haze out of the hold). And when a raider catches you: the <strong>Space Battle</strong> (ship against ship in a box that closes in, with a grapple to board her).</li>
     <li><strong>The Cradle Gym ladder, then the first Ordeal.</strong> Five rungs of Skirmish against named islanders, then the Labyrinth Ordeal on Driftspar and its beasts, one at a time.</li>
-    <li><strong>Character creator.</strong> Every option shown as a portrait: 23 faces, 38 haircuts, 18 beards, brows, scars and war paint. You start in plain clothes and buy the rest.</li>
+    <li><strong>Character creator.</strong> Every option shown as a portrait: 14 faces, 38 haircuts, 18 beards, brows, scars and war paint. You start in plain clothes and buy the rest.</li>
     <li><strong>One currency.</strong> Gold. A shop that shows the item itself, not an icon, dyes you buy once and keep, a backpack, and a chart of the island.</li>
     <li><strong>Islanders worth talking to.</strong> Optional, and easy to miss. Each knows the room they are standing in, what they are doing, and what just happened. They remember you between conversations, and they pass word about you across the island.</li>
     <li><strong>Hearties, and sweethearts.</strong> Rapport runs from Despised to Confidant, and it changes what people say and what they will do for you. Put someone on your hearties roster or your crew, and if the feeling runs both ways, court them: fond, then smitten, then sweethearts.</li>
@@ -216,55 +195,57 @@ footer{border-top:1px solid var(--border-chip);padding:var(--sp-xl) 0 var(--sp-x
   <h2>Videos</h2>
   <div class="grid">
     <figure>
-      <video controls preload="none" width="1280" height="720" poster="../assets/trailer_poster.jpg" src="../assets/trailer_720p.mp4"></video>
-      <figcaption>Gameplay trailer, v1.5 alpha demo.<span>trailer_720p.mp4, 1280x720, 60 s, 8.8 MB. A 1080p master is available on request.</span></figcaption>
+      <div class="frame"><div class="in"><video controls preload="none" width="1280" height="720" poster="../assets/trailer_v2_poster.jpg" src="../assets/trailer_v2_720p.mp4"></video></div></div>
+      <figcaption>The wishlist trailer, alpha footage.<span>trailer_v2_720p.mp4, 1280x720, 59 s, 11.1 MB. A 1080p master is available on request.</span></figcaption>
     </figure>
     <figure>
-      <video controls preload="metadata" width="1280" height="720" poster="assets/star_intro_poster.jpg" src="assets/star_intro.mp4"></video>
-      <figcaption>The opening. Stars spell the title, then the camera falls to the island.<span>star_intro.mp4, 1280x720, 4.7 MB</span></figcaption>
+      <div class="frame"><div class="in"><video controls preload="metadata" width="1280" height="720" poster="../assets/clips/opening_poster.jpg" src="../assets/clips/opening.mp4"></video></div></div>
+      <figcaption>The opening. Stars spell the title, then the camera falls to the island.<span>opening.mp4, 1280x720, 18 s with the game's sound, 4.7 MB</span></figcaption>
     </figure>
     <figure>
-      <video controls preload="metadata" width="960" height="540" poster="../assets/clip_5_meet_poster.jpg" src="../assets/clip_5_meet.mp4"></video>
-      <figcaption>Meeting an islander and talking to him.<span>clip_5_meet.mp4, 960x540, 1.2 MB</span></figcaption>
+      <div class="frame"><div class="in"><video controls preload="metadata" width="1280" height="720" poster="../assets/clips/tavern-evening_poster.jpg" src="../assets/clips/tavern-evening.mp4"></video></div></div>
+      <figcaption>The tavern of an evening, the islanders at their tables.<span>tavern-evening.mp4, 1280x720, 7 s loop, 1.9 MB</span></figcaption>
     </figure>
     <figure>
-      <video controls preload="metadata" width="640" height="360" poster="../assets/gif_1_duel_poster.jpg" src="../assets/gif_1_duel.mp4"></video>
-      <figcaption>A Skirmish duel at the Cradle Gym.<span>gif_1_duel.mp4, 640x360, short loop, 0.25 MB</span></figcaption>
+      <div class="frame"><div class="in"><video controls preload="metadata" width="960" height="540" poster="../assets/clips/labyrinth_poster.jpg" src="../assets/clips/labyrinth.mp4"></video></div></div>
+      <figcaption>A Labyrinth bout against the Charging Rhino.<span>labyrinth.mp4, 960x540, 7 s loop, 0.8 MB</span></figcaption>
     </figure>
   </div>
-  <p class="muted" style="margin-top:var(--sp-lg)">Longer capture of each mini-game (Mining, Coin Drop, Lumberjacking, Dish Duty, Skirmish, Poker) and of the character creator is available on request, 1280x720 MP4, 1.4 to 5.7 MB each, captured on v1.1.1. <a href="#contact">Ask via the Contact section</a>.</p>
+  <p class="small">The opening, the tavern and the bout were captured on v2.0.5-alpha, as was the short loop of each of the twelve mini-games on the front page; the full takes (1280x720 with the game's own sound) are available on request. <a href="#contact">Ask via the Contact section</a>.</p>
 </section>
 
 <section id="images">
   <h2>Images</h2>
-  <p class="muted">Fifteen screenshots, 1280x720 PNG. The six ship minigames were captured on 30 September 2026 from the development build just past v1.21.3; of the nine island shots, Coin Drop, Lumberjacking and Dish Duty are from v1.3.1 and the other six from v1.1.1, 28 August. Click for the full-size file. All fifteen are in <a href="presskit.zip">presskit.zip</a>.</p>
+  <p class="small">Seventeen screenshots, PNG, all captured on 11 October 2026 from v2.0.5-alpha, the current download, at the High graphics setting: the twelve mini-games, the job notice, the outfitter and the character creator at 1280x720, and the two tavern shots at 1920x1080. Click one for the full-size file. All seventeen are in <a href="presskit.zip">presskit.zip</a>.</p>
   <div class="grid">
-    <figure><a href="../assets/shot_1_skirmish_duel.png"><img src="../assets/shot_1_skirmish_duel_640.jpg" width="640" height="360" alt="A Skirmish duel, two block boards side by side in the gym" loading="lazy"></a><figcaption>Skirmish duel at the Cradle Gym<span>shot_1_skirmish_duel.png</span></figcaption></figure>
-    <figure><a href="../assets/shot_3_poker_table.png"><img src="../assets/shot_3_poker_table_640.jpg" width="640" height="360" alt="The inn's poker table under a lamp" loading="lazy"></a><figcaption>Poker at the inn<span>shot_3_poker_table.png</span></figcaption></figure>
-    <figure><a href="../assets/shot_4_mining_board.png"><img src="../assets/shot_4_mining_board_640.jpg" width="640" height="360" alt="The mining board carved into rock" loading="lazy"></a><figcaption>Mining<span>shot_4_mining_board.png</span></figcaption></figure>
-    <figure><a href="../assets/shot_5_wanted_job.png"><img src="../assets/shot_5_wanted_job_640.jpg" width="640" height="360" alt="A job notice on Cradle Rock" loading="lazy"></a><figcaption>Taking a job on the island<span>shot_5_wanted_job.png</span></figcaption></figure>
-    <figure><a href="../assets/shot_6_outfitter.png"><img src="../assets/shot_6_outfitter_640.jpg" width="640" height="360" alt="The outfitter's shop with a garment preview" loading="lazy"></a><figcaption>The outfitter<span>shot_6_outfitter.png</span></figcaption></figure>
-    <figure><a href="../assets/shot_7_create_hero.png"><img src="../assets/shot_7_create_hero_640.jpg" width="640" height="360" alt="The character creator with portrait choices" loading="lazy"></a><figcaption>Character creator<span>shot_7_create_hero.png</span></figcaption></figure>
-    <figure><a href="../assets/shot_8_coin_drop.png"><img src="../assets/shot_8_coin_drop_640.jpg" width="640" height="360" alt="The Coin Drop pegboard in the tavern" loading="lazy"></a><figcaption>Coin Drop<span>shot_8_coin_drop.png</span></figcaption></figure>
-    <figure><a href="../assets/shot_9_lumberjacking.png"><img src="../assets/shot_9_lumberjacking_640.jpg" width="640" height="360" alt="The lumberjacking frame in the grove" loading="lazy"></a><figcaption>Lumberjacking<span>shot_9_lumberjacking.png</span></figcaption></figure>
-    <figure><a href="../assets/shot_10_dish_duty.png"><img src="../assets/shot_10_dish_duty_640.jpg" width="640" height="360" alt="The tavern sink in Dish Duty" loading="lazy"></a><figcaption>Dish Duty<span>shot_10_dish_duty.png</span></figcaption></figure>
-    <figure><a href="../assets/shot_11_gunnery.png"><img src="../assets/shot_11_gunnery_640.jpg" width="640" height="360" alt="Gunnery on the gun deck: six lanes of coloured rings over the cannons, Stardust lightning running down both edges of the road, the gun crew cheering with their arms up, and a x8 multiplier" loading="lazy"></a><figcaption>Gunnery on the gun deck<span>shot_11_gunnery.png</span></figcaption></figure>
-    <figure><a href="../assets/shot_12_space_battle.png"><img src="../assets/shot_12_space_battle_640.jpg" width="640" height="360" alt="The Space Battle, turn 5 with the box closing: a red-sailed raider takes a hit alongside the Stardust Cutter on a glowing grid, the move tokens and gun ports below" loading="lazy"></a><figcaption>The Space Battle<span>shot_12_space_battle.png</span></figcaption></figure>
-    <figure><a href="../assets/shot_13_sailing.png"><img src="../assets/shot_13_sailing_640.jpg" width="640" height="360" alt="Sailing: rows of bricks over the ship's sails and the ball's glittering trail below them, with Drawing Well! called out" loading="lazy"></a><figcaption>Sailing<span>shot_13_sailing.png</span></figcaption></figure>
-    <figure><a href="../assets/shot_14_navigation.png"><img src="../assets/shot_14_navigation_640.jpg" width="640" height="360" alt="Navigation: a board of blue, red and yellow bubbles, the aim line rising from the ship's wheel" loading="lazy"></a><figcaption>Navigation<span>shot_14_navigation.png</span></figcaption></figure>
-    <figure><a href="../assets/shot_15_venting.png"><img src="../assets/shot_15_venting_640.jpg" width="640" height="360" alt="Venting: a board of gems set in the hull, a match lighting up with Spark! +12" loading="lazy"></a><figcaption>Venting<span>shot_15_venting.png</span></figcaption></figure>
-    <figure><a href="../assets/shot_16_carpentry.png"><img src="../assets/shot_16_carpentry_640.jpg" width="640" height="360" alt="Carpentry: planks fitted into a starry hole in the hull, a green outline where the next one goes, combo 2" loading="lazy"></a><figcaption>Carpentry<span>shot_16_carpentry.png</span></figcaption></figure>
+    <figure><a class="shot" href="../assets/shots/skirmish.png"><div class="frame"><div class="in"><img src="../assets/shots/skirmish_640.jpg" width="640" height="360" alt="A Skirmish duel in the Cradle Gym against Hollow Sable: FLOOR CRACKED! over your board as a cleared line shatters, your health at 15 of 18 and hers at 22 of 25, her blocks stacked high up one wall of her board" loading="lazy"></div></div></a><figcaption>A Skirmish duel<span>screenshots/skirmish.png</span></figcaption></figure>
+    <figure><a class="shot" href="../assets/shots/poker.png"><div class="frame"><div class="in"><img src="../assets/shots/poker_640.jpg" width="640" height="360" alt="Poker at the tavern table: the river is out, an ace, a ten, two queens and a five, a pot of 304, you holding two pair with your turn to act, Flint Vane checking and Stormy Marn and Hearty Bralo folded" loading="lazy"></div></div></a><figcaption>Poker at the inn<span>screenshots/poker.png</span></figcaption></figure>
+    <figure><a class="shot" href="../assets/shots/coin-drop.png"><div class="frame"><div class="in"><img src="../assets/shots/coin-drop_640.jpg" width="640" height="360" alt="Coin Drop on the tavern wall, round 1: your gold coins and Vane&#x27;s red ones tipping the switches down the pegboard, you on 4 of 10 and Vane on 2 while he thinks, torches burning either side" loading="lazy"></div></div></a><figcaption>Coin Drop<span>screenshots/coin-drop.png</span></figcaption></figure>
+    <figure><a class="shot" href="../assets/shots/mining.png"><div class="frame"><div class="in"><img src="../assets/shots/mining_640.jpg" width="640" height="360" alt="Mining: a big blue gem and a diamond freed in the rock face, the rotation square on the next pieces to turn, seven gold, three crates of six and a x2.0 multiplier, the ore cart below catching coins and gems" loading="lazy"></div></div></a><figcaption>Mining<span>screenshots/mining.png</span></figcaption></figure>
+    <figure><a class="shot" href="../assets/shots/lumberjacking.png"><div class="frame"><div class="in"><img src="../assets/shots/lumberjacking_640.jpg" width="640" height="360" alt="Lumberjacking at the Grove: FLARE! x3 as a three-deep chain pays out, the bin piled with logs fused into slabs, 32 wood and a score of 169, the woodpile stacked high beside the frame" loading="lazy"></div></div></a><figcaption>Lumberjacking<span>screenshots/lumberjacking.png</span></figcaption></figure>
+    <figure><a class="shot" href="../assets/shots/dish-duty.png"><div class="frame"><div class="in"><img src="../assets/shots/dish-duty_640.jpg" width="640" height="360" alt="Dish Duty at the tavern&#x27;s kitchen sink: STARFIRE! as gold sparks burst across the plate, plate 6 of 10, 5 gold, a streak of 22 at x2.1 and the clean plates racked on the right" loading="lazy"></div></div></a><figcaption>Dish Duty<span>screenshots/dish-duty.png</span></figcaption></figure>
+    <figure><a class="shot" href="../assets/shots/islanders.png"><div class="frame"><div class="in"><img src="../assets/shots/islanders_640.jpg" width="640" height="360" alt="The tavern of an evening: a fire in the hearth, Flint Vane over an ale while Merry Tansy serves Cinder Tor at the near table, Hollow Sable telling tales to Cogwise Fettle by the stairs, and a small face over each islander showing their mood" loading="lazy"></div></div></a><figcaption>The tavern of an evening<span>screenshots/islanders_1920.png</span></figcaption></figure>
+    <figure><a class="shot" href="../assets/shots/romance.png"><div class="frame"><div class="in"><img src="../assets/shots/romance_640.jpg" width="640" height="360" alt="Courting Hollow Sable at the corner table: the romance meter over her rising with two hearts while Cogwise Fettle drinks beside her, the fire burning at the back" loading="lazy"></div></div></a><figcaption>Courting in the tavern<span>screenshots/romance_1920.png</span></figcaption></figure>
+    <figure><a class="shot" href="../assets/shots/gunnery.png"><div class="frame"><div class="in"><img src="../assets/shots/gunnery_640.jpg" width="640" height="360" alt="Gunnery on the gun deck: six cannons under their coloured rings, powder, wad and shot rolling down the lanes, Stardust lightning down both edges, the gun crew cheering with their arms up and a x8 multiplier" loading="lazy"></div></div></a><figcaption>Gunnery on the gun deck<span>screenshots/gunnery.png</span></figcaption></figure>
+    <figure><a class="shot" href="../assets/shots/space-battle.png"><div class="frame"><div class="in"><img src="../assets/shots/space-battle_640.jpg" width="640" height="360" alt="The Space Battle, turn 7 with the box closing: the Raider Cutter and the Stardust Cutter trading cannon fire on the glowing grid, the move tokens and the ship&#x27;s plan below" loading="lazy"></div></div></a><figcaption>The Space Battle<span>screenshots/space-battle.png</span></figcaption></figure>
+    <figure><a class="shot" href="../assets/shots/sailing.png"><div class="frame"><div class="in"><img src="../assets/shots/sailing_640.jpg" width="640" height="360" alt="Sailing: a brick smashed off the wall over the ship&#x27;s sails, the ball&#x27;s glittering trail climbing to the masthead and the deck plank waiting below" loading="lazy"></div></div></a><figcaption>Sailing<span>screenshots/sailing.png</span></figcaption></figure>
+    <figure><a class="shot" href="../assets/shots/navigation.png"><div class="frame"><div class="in"><img src="../assets/shots/navigation_640.jpg" width="640" height="360" alt="Navigation: blue moon and red comet bubbles hanging over a star chart, the aim line rising from the ship&#x27;s wheel with a bubble loaded, three stars and 1470 points" loading="lazy"></div></div></a><figcaption>Navigation<span>screenshots/navigation.png</span></figcaption></figure>
+    <figure><a class="shot" href="../assets/shots/venting.png"><div class="frame"><div class="in"><img src="../assets/shots/venting_640.jpg" width="640" height="360" alt="Venting: a board of gems set into the hull down in the hold, a gem picked for the next swap, sparks falling from a match and the score climbing by six" loading="lazy"></div></div></a><figcaption>Venting<span>screenshots/venting.png</span></figcaption></figure>
+    <figure><a class="shot" href="../assets/shots/carpentry.png"><div class="frame"><div class="in"><img src="../assets/shots/carpentry_640.jpg" width="640" height="360" alt="Carpentry: planks fitted into a starry hole in the hull, two gaps left to fill, the next timber shapes waiting in the tray and a fresh plank sparkling into place" loading="lazy"></div></div></a><figcaption>Carpentry<span>screenshots/carpentry.png</span></figcaption></figure>
+    <figure><a class="shot" href="../assets/shots/wanted-job.png"><div class="frame"><div class="in"><img src="../assets/shots/wanted-job_640.jpg" width="640" height="360" alt="A Wanted: Lumberjacks notice at the market: Cogwise Fettle will test you on the spot before he takes you on, at 3 gold per wood delivered" loading="lazy"></div></div></a><figcaption>Taking a job on the island<span>screenshots/wanted-job.png</span></figcaption></figure>
+    <figure><a class="shot" href="../assets/shots/outfitter.png"><div class="frame"><div class="in"><img src="../assets/shots/outfitter_640.jpg" width="640" height="360" alt="The Outfitter at the market: the hats on the Head tab, from a 130-gold Deckhand&#x27;s Bandana to a 460-gold Buckled Highhat that adds armour, with a Steel-Blue dye picked to order them in" loading="lazy"></div></div></a><figcaption>The outfitter<span>screenshots/outfitter.png</span></figcaption></figure>
+    <figure><a class="shot" href="../assets/shots/create-hero.png"><div class="frame"><div class="in"><img src="../assets/shots/create-hero_640.jpg" width="640" height="360" alt="Create Your Hero: a bearded hero with shaggy dark hair taking shape in the preview beside rows of faces and haircuts, with hair, eye and skin colour swatches and the name Stormy Halloway rolled in" loading="lazy"></div></div></a><figcaption>Character creator<span>screenshots/create-hero.png</span></figcaption></figure>
   </div>
 </section>
 
 <section id="logo">
   <h2>Logo &amp; Icon</h2>
-  <p class="muted">The logo is the name, cut from the game's own blue gem. Please use it as supplied: no recolouring, no added emblem, and never re-typeset as text. Use the files with the rim of light over the game or any footage, and the clean ones on backgrounds you design.</p>
+  <p class="small">The logo is the name, cut from the game's own blue gem. Please use it as supplied: no recolouring, no added emblem, and never re-typeset as text. Use the files with the rim of light over the game or any footage, and the clean ones on backgrounds you design.</p>
   <div class="grid logos">
-    <figure><a href="assets/logo_2400.png"><img src="../assets/logo_1200.png" width="1200" height="290" alt="The Shivaliva logo" loading="lazy"></a><figcaption>Logo, transparent background<span>logo_600.png, logo_1200.png, logo_2400.png (with the rim of light) · logo_clean_600.png, logo_clean_1200.png, logo_clean_2400.png</span></figcaption></figure>
-    <figure class="sky"><a href="assets/logo_on_sky_1920.png"><img src="assets/logo_on_sky_1920.png" width="1920" height="560" alt="The Shivaliva logo over the sky above Driftspar" loading="lazy"></a><figcaption>Logo on sky<span>logo_on_sky_1920.png, 1920x560</span></figcaption></figure>
-    <figure class="sky"><a href="assets/splash.png"><img src="assets/splash.png" width="1920" height="1080" alt="Shivaliva splash screen" loading="lazy"></a><figcaption>Splash<span>splash.png, 1920x1080</span></figcaption></figure>
-    <figure class="icon"><a href="../assets/icon_256.png"><img src="../assets/icon_256.png" width="256" height="256" alt="Shivaliva icon" loading="lazy"></a><figcaption>Icon<span>icon_256.png, 256x256</span></figcaption></figure>
+    <figure><a href="assets/logo_clean_2400.png"><div class="frame"><div class="in"><img src="../assets/logo_clean_1200.png" width="1200" height="280" alt="The Shivaliva logo" loading="lazy"></div></div></a><figcaption>Logo, transparent background<span>logo_600.png, logo_1200.png, logo_2400.png (with the rim of light) · logo_clean_600.png, logo_clean_1200.png, logo_clean_2400.png</span></figcaption></figure>
+    <figure class="sky"><a href="assets/logo_on_sky_1920.png"><div class="frame"><div class="in"><img src="assets/logo_on_sky_1920.png" width="1920" height="560" alt="The Shivaliva logo over the sky above Driftspar" loading="lazy"></div></div></a><figcaption>Logo on sky<span>logo_on_sky_1920.png, 1920x560</span></figcaption></figure>
+    <figure class="sky"><a href="assets/splash.png"><div class="frame"><div class="in"><img src="assets/splash.png" width="1920" height="1080" alt="Shivaliva splash screen" loading="lazy"></div></div></a><figcaption>Splash<span>splash.png, 1920x1080</span></figcaption></figure>
+    <figure><a href="../assets/icon_512.png"><div class="frame"><div class="in"><img src="../assets/icon_256.png" width="256" height="256" alt="The Shivaliva icon: a floating island under a blue diamond" loading="lazy" style="max-height:130px"></div></div></a><figcaption>Icon<span>icon_256.png, icon_512.png</span></figcaption></figure>
   </div>
 </section>
 
@@ -277,7 +258,7 @@ footer{border-top:1px solid var(--border-chip);padding:var(--sp-xl) 0 var(--sp-x
   <p>Epic Medieval Music Pack I by pegonthetrack &amp; ELVGames (purchased licence). Tracks used: Theme, Clear Waters, Sewage, War, Fortified, End of the Road. Credits to pegonthetrack &amp; ELVGames: <a href="https://elv-games.itch.io">elv-games.itch.io</a>, <a href="https://linktr.ee/pegonthetrack">linktr.ee/pegonthetrack</a>.</p>
   <p>The gun deck's songs, by Kevin MacLeod (<a href="https://incompetech.com">incompetech.com</a>), each credited by title: "Galway", "Kings of Tara", "Village Consort", "Netherworld Shanty", "Master of the Feast", "Pippin the Hunchback", "Celtic Impulse", "Adventures in Adventureland", "Fiddles McGinty", "Minstrel Guild". Licensed under Creative Commons: By Attribution 4.0 License (<a href="https://creativecommons.org/licenses/by/4.0/">https://creativecommons.org/licenses/by/4.0/</a>).</p>
   <h3>Sound</h3>
-  <div class="tbl">
+  <div class="tbl cut">
   <table>
     <thead><tr><th>Files</th><th>Origin</th><th>Licence</th><th>Credit</th></tr></thead>
     <tbody>
@@ -294,26 +275,34 @@ footer{border-top:1px solid var(--border-chip);padding:var(--sp-xl) 0 var(--sp-x
   </div>
   <h3>Voices</h3>
   <p>NPC voices are generated on the player's own machine, and nothing is sent anywhere. Made with sherpa-onnx (Apache-2.0) using the Piper en_GB-vctk-medium voice model, trained on the CSTR VCTK Corpus (University of Edinburgh), CC BY 4.0.</p>
-  <p class="muted">Shivaliva is not affiliated with or endorsed by Synty Studios, Microsoft, Mixamo, GDQuest, Kenney, Kevin MacLeod, Three Rings or Grey Havens.</p>
+  <p class="small">Shivaliva is not affiliated with or endorsed by Synty Studios, Microsoft, Mixamo, GDQuest, Kenney, Kevin MacLeod, Three Rings or Grey Havens.</p>
 </section>
 
 <section id="contact">
   <h2>Contact</h2>
-  <ul>
+  <ul class="list">
     <li>Game page and devlog: <a href="https://tairoyzone.itch.io/shivaliva-shanty">tairoyzone.itch.io/shivaliva-shanty</a></li>
     <li>Developer profile: <a href="https://tairoyzone.itch.io">tairoyzone.itch.io</a></li>
     <li>X: <a href="https://x.com/trojanatoplat">@trojanatoplat</a></li>
     <li>Email: <a href="mailto:tairoy.zone@gmail.com">tairoy.zone@gmail.com</a></li>
   </ul>
-  <p class="muted">Keys, interviews and the full-length clips: send a message on either channel above.</p>
+  <p class="small">Keys, interviews and the full-length clips: send a message on either channel above.</p>
 </section>
 
 </main>
 </div>
 
-<footer>
+<footer class="press-foot">
   <div class="wrap">Shivaliva is made by Trojan Bulldog. Press kit layout follows the presskit() format by Rami Ismail.</div>
 </footer>
 
+<dialog class="overlay lightbox" id="lightbox" aria-label="Screenshot">
+  <button class="ctl x" type="button" aria-label="Close">&times;</button>
+  <button class="ctl prev" type="button" aria-label="Previous screenshot">&lsaquo;</button>
+  <button class="ctl next" type="button" aria-label="Next screenshot">&rsaquo;</button>
+  <figure><img alt="" width="1280" height="720"><figcaption></figcaption></figure>
+</dialog>
+
+<script src="../assets/site.js" defer></script>
 </body>
 </html>

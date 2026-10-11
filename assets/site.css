@@ -1,0 +1,246 @@
+/* Shivaliva site, daylight edition (2026-10-11).
+   One stylesheet for every page: the landing, the guide, the press kit and the 404.
+   The look is the game's own window language on a light ground: ivory paper, deep navy ink,
+   the logo's blue gem as the one accent, cut 45-degree corners on frames and buttons, and a
+   faceted gem diamond as the "you are here" mark. Gold appears only as the game's frame hairline. */
+
+:root {
+  /* ground */
+  --paper: #F8F5EE;
+  --paper-2: #F1ECE1;
+  --mist: #EDF3FA;
+  --white: #FFFFFF;
+  /* ink (measured on --paper: ink 15.6:1, ink-2 8.8:1, ink-3 5.1:1) */
+  --ink: #122033;
+  --ink-2: #3B475A;
+  --ink-3: #5F697C;
+  /* the gem: the official logo blue, #006DC5 (4.8:1 on paper; white on it 5.3:1) */
+  --gem: #006DC5;
+  --gem-hi: #3D9BEA;
+  --gem-deep: #00539A;
+  --gem-tint: #DCEBFA;
+  --gem-wash: rgba(0, 109, 197, 0.08);
+  /* the game's window frame, as a hairline only */
+  --frame: #C9B48C;
+  --line: rgba(18, 32, 51, 0.12);
+  --line-2: rgba(18, 32, 51, 0.22);
+  /* states */
+  --leaf: #23824F;
+  --ember: #B4581E;
+
+  --font-display: "Josefin Sans", "Futura", "Century Gothic", "Trebuchet MS", sans-serif;
+  --font-body: "Source Sans 3", "Segoe UI", system-ui, -apple-system, sans-serif;
+
+  --cut: 12px;
+  --wrap: 1180px;
+  --gutter: clamp(16px, 4vw, 40px);
+  --shadow-1: 0 1px 2px rgba(18, 32, 51, 0.06), 0 2px 10px rgba(18, 32, 51, 0.05);
+  --shadow-2: 0 2px 6px rgba(18, 32, 51, 0.07), 0 22px 44px -16px rgba(18, 32, 51, 0.28);
+  --ease: cubic-bezier(0.2, 0.7, 0.2, 1);
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  color-scheme: light;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { background: var(--paper); scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0; background: var(--paper); color: var(--ink);
+  font: 400 1.0625rem/1.65 var(--font-body);
+  -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; overflow-x: hidden;
+}
+img, video, iframe { display: block; max-width: 100%; height: auto; }
+h1, h2, h3, h4, p, ul, ol, figure, dl, dd { margin: 0; }
+ul, ol { padding: 0; list-style: none; }
+a { color: var(--gem); text-decoration: none; transition: color 0.2s var(--ease); }
+a:hover { color: var(--gem-deep); text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 1px; }
+:focus-visible { outline: 2px solid var(--gem); outline-offset: 3px; }
+::selection { background: var(--gem-tint); color: var(--ink); }
+b, strong { font-weight: 600; }
+
+/* page transitions between the site's own pages (Chrome, Edge, Safari 18.2+; others just navigate) */
+@view-transition { navigation: auto; }
+::view-transition-old(root), ::view-transition-new(root) { animation-duration: 0.32s; animation-timing-function: var(--ease); }
+
+.wrap { width: 100%; max-width: var(--wrap); margin: 0 auto; padding: 0 var(--gutter); }
+.skip { position: absolute; left: -999px; top: 8px; z-index: 100; background: var(--white); padding: 10px 14px; }
+.skip:focus { left: 8px; }
+
+/* ---------- type ---------- */
+h1, h2, h3 { font-family: var(--font-display); font-weight: 700; color: var(--ink); text-wrap: balance; }
+h2 { font-size: clamp(1.9rem, 3.6vw, 2.9rem); line-height: 1.08; letter-spacing: -0.005em; }
+h3 { font-size: 1.28rem; line-height: 1.25; }
+.kicker {
+  display: inline-flex; align-items: center; gap: 10px;
+  font: 700 0.78rem/1 var(--font-display); letter-spacing: 0.22em; text-transform: uppercase; color: var(--gem);
+}
+.lead { font-size: clamp(1.12rem, 1.6vw, 1.3rem); line-height: 1.6; color: var(--ink-2); max-width: 60ch; }
+.small { font-size: 0.92rem; color: var(--ink-3); }
+.prose p + p { margin-top: 0.9em; }
+.prose { max-width: 66ch; color: var(--ink-2); }
+
+/* ---------- the gem: a faceted diamond, cut like the logo's i-dots ---------- */
+.gem {
+  --s: 11px; display: inline-block; flex: none; width: var(--s); height: var(--s); transform: rotate(45deg);
+  background: conic-gradient(from 225deg, #7CC0F7 0 25%, #2B8DDE 0 50%, #005BA8 0 75%, #0A78D2 0);
+  border-radius: 1px;
+}
+.gem.lg { --s: 16px; }
+.gem.hollow { background: transparent; box-shadow: inset 0 0 0 1.5px var(--line-2); }
+
+/* ---------- the game's window frame: a hairline that follows the cut corners ---------- */
+.cut {
+  --c: var(--cut);
+  clip-path: polygon(var(--c) 0, calc(100% - var(--c)) 0, 100% var(--c), 100% calc(100% - var(--c)),
+                     calc(100% - var(--c)) 100%, var(--c) 100%, 0 calc(100% - var(--c)), 0 var(--c));
+}
+.frame { --c: var(--cut); position: relative; padding: 1px; background: var(--line-2); }
+.frame.gold { background: var(--frame); }
+.frame > .in { position: relative; overflow: hidden; background: var(--paper-2); }
+.frame, .frame > .in {
+  clip-path: polygon(var(--c) 0, calc(100% - var(--c)) 0, 100% var(--c), 100% calc(100% - var(--c)),
+                     calc(100% - var(--c)) 100%, var(--c) 100%, 0 calc(100% - var(--c)), 0 var(--c));
+}
+.frame img, .frame video { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; }
+.lift { filter: drop-shadow(0 18px 28px rgba(18, 32, 51, 0.16)) drop-shadow(0 2px 4px rgba(18, 32, 51, 0.08)); }
+
+/* ---------- buttons (filled shapes; a fact is never one of these) ---------- */
+.btn {
+  --c: 9px; position: relative; isolation: isolate; overflow: hidden;
+  display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+  min-height: 48px; padding: 0 22px; border: 0; cursor: pointer; text-decoration: none !important; white-space: nowrap;
+  font: 700 0.84rem/1 var(--font-display); letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--ink); background: var(--paper-2);
+  clip-path: polygon(var(--c) 0, calc(100% - var(--c)) 0, 100% var(--c), 100% calc(100% - var(--c)),
+                     calc(100% - var(--c)) 100%, var(--c) 100%, 0 calc(100% - var(--c)), 0 var(--c));
+  box-shadow: inset 0 0 0 1px var(--line-2);
+  transition: background 0.25s var(--ease), color 0.25s var(--ease), transform 0.25s var(--ease);
+}
+.btn:hover { background: var(--gem-tint); color: var(--gem-deep); }
+.btn:active { transform: translateY(1px); }
+.btn-gem { color: #fff; background: linear-gradient(180deg, #1A86DD 0%, var(--gem) 55%, #005EAD 100%); box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.28); }
+.btn-gem:hover { color: #fff; background: linear-gradient(180deg, #2A92E6 0%, #0A78D2 55%, var(--gem) 100%); }
+/* the shine: a light sweep across the gem on hover */
+.btn-gem::after {
+  content: ""; position: absolute; inset: -20% auto -20% -60%; width: 40%; z-index: -1;
+  background: linear-gradient(100deg, transparent, rgba(255, 255, 255, 0.42), transparent);
+  transform: skewX(-18deg) translateX(0); transition: transform 0.7s var(--ease-out);
+}
+.btn-gem:hover::after { transform: skewX(-18deg) translateX(420%); }
+.btn .gem { --s: 9px; background: conic-gradient(from 225deg, #fff 0 25%, #D8EBFC 0 50%, #A9D0F4 0 75%, #EAF4FE 0); }
+.btn-row { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
+
+/* ---------- facts: plain text with gem separators, categorically not buttons ---------- */
+/* Every item carries a gem in the gap before it; the list is shifted left by one gap and clipped back, so the gem
+   that would open a wrapped line is cut away and no line ever starts with a stray separator. */
+.facts { display: flex; flex-wrap: wrap; align-items: center; row-gap: 6px; margin-left: -26px; clip-path: inset(0 0 0 26px); font-size: 0.93rem; color: var(--ink-3); }
+.facts li { position: relative; margin-left: 26px; white-space: nowrap; }
+.facts li::before { content: ""; position: absolute; left: -16px; top: 50%; width: 5px; height: 5px; margin-top: -3px; transform: rotate(45deg); background: var(--gem); opacity: 0.55; }
+.facts b { color: var(--ink); font-weight: 600; }
+
+/* ---------- top bar ---------- */
+.topbar { position: sticky; top: 0; z-index: 40; background: rgba(248, 245, 238, 0.96); transition: box-shadow 0.3s var(--ease); }
+.topbar.scrolled { box-shadow: 0 1px 0 var(--line), 0 8px 24px -18px rgba(18, 32, 51, 0.4); }
+.topbar .wrap { display: flex; align-items: center; gap: 20px; min-height: 66px; }
+.brand { display: inline-flex; align-items: center; gap: 10px; color: var(--ink); text-decoration: none !important; min-width: 0; }
+.brand img { width: 34px; height: 34px; border-radius: 8px; }
+.brand span { font: 700 1rem/1 var(--font-display); letter-spacing: 0.16em; text-transform: uppercase; }
+.brand:hover { color: var(--gem); }
+.nav { display: flex; align-items: center; gap: 4px; margin-left: auto; }
+.nav a {
+  position: relative; display: inline-flex; align-items: center; min-height: 44px; padding: 0 11px; white-space: nowrap;
+  font: 700 0.75rem/1 var(--font-display); letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-2);
+  text-decoration: none !important;
+}
+.nav a:hover { color: var(--gem); }
+/* the gem marks the section you are in, like the title menu's gem brackets the entry you are on */
+.nav a::after {
+  content: ""; position: absolute; left: 50%; bottom: 6px; width: 6px; height: 6px; margin-left: -3px;
+  background: var(--gem); transform: rotate(45deg) scale(0); transition: transform 0.35s var(--ease-out);
+}
+.nav a[aria-current="true"] { color: var(--ink); }
+.nav a[aria-current="true"]::after { transform: rotate(45deg) scale(1); }
+.topbar .btn { min-height: 42px; padding: 0 18px; font-size: 0.75rem; white-space: nowrap; flex: none; }
+.menu-btn { display: none; width: 46px; height: 46px; border: 0; background: transparent; color: var(--ink); cursor: pointer; padding: 0; }
+.menu-btn svg { display: block; margin: auto; }
+.menu-btn .l { transition: transform 0.3s var(--ease), opacity 0.2s; transform-origin: center; }
+.menu-btn[aria-expanded="true"] .l1 { transform: translateY(5px) rotate(45deg); }
+.menu-btn[aria-expanded="true"] .l2 { opacity: 0; }
+.menu-btn[aria-expanded="true"] .l3 { transform: translateY(-5px) rotate(-45deg); }
+@media (max-width: 1099px) {
+  .menu-btn { display: block; }
+  .nav {
+    position: absolute; left: 0; right: 0; top: 100%; display: grid; gap: 0; margin: 0; padding: 8px var(--gutter) 16px;
+    background: var(--paper); box-shadow: 0 1px 0 var(--line), 0 24px 40px -20px rgba(18, 32, 51, 0.35);
+    opacity: 0; visibility: hidden; transform: translateY(-8px); transition: opacity 0.25s var(--ease), transform 0.25s var(--ease), visibility 0.25s;
+  }
+  .nav[data-open] { opacity: 1; visibility: visible; transform: none; }
+  .nav a { min-height: 52px; font-size: 0.86rem; border-bottom: 1px solid var(--line); }
+  .nav a::after { left: auto; right: 4px; bottom: auto; top: 50%; margin-top: -3px; }
+  .topbar .btn { margin-left: auto; }
+}
+@media (max-width: 420px) { .brand span { display: none; } }
+
+/* ---------- sections ---------- */
+section { padding: clamp(64px, 9vw, 120px) 0; scroll-margin-top: 66px; }
+section.mist { background: var(--mist); }
+.head { display: grid; gap: 14px; margin-bottom: clamp(28px, 4vw, 48px); max-width: 760px; }
+
+/* ---------- reveal on scroll (only when JS has run; reduced motion shows everything) ---------- */
+.js .reveal { opacity: 0; transform: translateY(22px); transition: opacity 0.8s var(--ease-out), transform 0.8s var(--ease-out); transition-delay: calc(var(--i, 0) * 70ms); }
+.js .reveal.in { opacity: 1; transform: none; }
+
+/* ---------- media tiles (a poster at rest, the clip plays on hover or when in view on touch) ---------- */
+.tile { display: grid; gap: 10px; align-content: start; }
+.tile .frame { transition: transform 0.45s var(--ease-out); }
+.tile .in img, .tile .in video { transition: transform 0.8s var(--ease-out); }
+.tile .in video { position: absolute; inset: 0; height: 100%; opacity: 0; transition: opacity 0.35s var(--ease); }
+.tile.playing .in video { opacity: 1; }
+.tile:hover .frame { transform: translateY(-4px); }
+.tile:hover .in img, .tile:hover .in video { transform: scale(1.035); }
+.tile figcaption { display: flex; align-items: center; gap: 9px; font: 700 0.78rem/1.2 var(--font-display); letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink); }
+.tile figcaption .where { margin-left: auto; font: 600 0.72rem/1 var(--font-body); letter-spacing: 0.04em; text-transform: none; color: var(--ink-3); }
+
+/* ---------- overlays: the screenshot lightbox and the trailer player (native <dialog>: focus, Esc, inert page) ----------
+   A light scrim, not a black one: the picture sits on paper, like everything else on the site. */
+dialog.overlay { width: 100%; height: 100%; max-width: none; max-height: none; margin: 0; padding: 64px 16px; border: 0; background: transparent; color: var(--ink); }
+dialog.overlay[open] { display: grid; place-items: center; animation: overlay-in 0.35s var(--ease-out); }
+dialog.overlay::backdrop { background: rgba(241, 236, 225, 0.95); }
+dialog.overlay[open]::backdrop { animation: scrim-in 0.3s var(--ease); }
+@keyframes overlay-in { from { opacity: 0; transform: scale(0.975); } to { opacity: 1; transform: none; } }
+@keyframes scrim-in { from { opacity: 0; } to { opacity: 1; } }
+.overlay figure { display: grid; gap: 12px; max-width: min(96vw, 1280px); }
+.lightbox img { max-height: 78vh; width: auto; margin: 0 auto; box-shadow: var(--shadow-2); transition: opacity 0.2s var(--ease); }
+.lightbox img.swap { opacity: 0; }
+.overlay figcaption { text-align: center; color: var(--ink-2); font-size: 0.95rem; max-width: 80ch; margin: 0 auto; }
+.player video, .player iframe { display: block; width: min(92vw, 1280px); height: auto; aspect-ratio: 16 / 9; border: 0; background: #0b1220; box-shadow: var(--shadow-2); }
+.overlay .ctl { position: fixed; display: grid; place-items: center; width: 52px; height: 52px; border: 0; background: var(--white); color: var(--ink); cursor: pointer; box-shadow: var(--shadow-1); font: 400 1.7rem/1 var(--font-body); transition: color 0.2s var(--ease); }
+.overlay .ctl:hover { color: var(--gem); }
+.overlay .x { top: 14px; right: 14px; }
+.overlay .prev { left: 14px; top: 50%; margin-top: -26px; }
+.overlay .next { right: 14px; top: 50%; margin-top: -26px; }
+@media (max-width: 639px) { .overlay .prev, .overlay .next { top: auto; bottom: 14px; margin-top: 0; } }
+body.locked { overflow: hidden; }
+
+/* ---------- footer ---------- */
+.foot { border-top: 1px solid var(--line); padding: 48px 0 56px; font-size: 0.95rem; color: var(--ink-3); }
+.foot-grid { display: grid; gap: 32px; }
+@media (min-width: 860px) { .foot-grid { grid-template-columns: 1.3fr 1fr; } }
+.foot-links { display: flex; flex-wrap: wrap; gap: 4px 22px; margin-bottom: 18px; }
+.foot-links a { display: inline-flex; align-items: center; min-height: 36px; color: var(--ink-2); font-weight: 600; }
+.foot-links a:hover { color: var(--gem); }
+.sheet { display: grid; grid-template-columns: auto 1fr; gap: 8px 22px; padding: 22px 24px; background: var(--paper-2); }
+.sheet dt { font: 700 0.72rem/1.6 var(--font-display); letter-spacing: 0.16em; text-transform: uppercase; color: var(--ink-3); }
+.sheet dd { color: var(--ink); }
+
+/* thumbs, not cursors, set the floor for touch targets */
+@media (pointer: coarse) {
+  .foot-links a { min-height: 44px; }
+  .btn { min-height: 50px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
+  .js .reveal { opacity: 1; transform: none; }
+  @view-transition { navigation: none; }
+}
