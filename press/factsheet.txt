@@ -69,9 +69,10 @@ and Mixamo animations, used under their respective licences.
 Music: Epic Medieval Music Pack I (purchased licence).
   Credits to pegonthetrack & ELVGames (https://elv-games.itch.io, https://linktr.ee/pegonthetrack).
 Gun deck songs by Kevin MacLeod (incompetech.com): "Galway", "Kings of Tara",
-  "Village Consort", "Netherworld Shanty", "Master of the Feast", "Pippin the
-  Hunchback", "Celtic Impulse", "Adventures in Adventureland", "Fiddles McGinty",
-  "Minstrel Guild". Licensed under Creative Commons: By Attribution 4.0 License
+  "Village Consort", "Netherworld Shanty", "Club Seamus", "Thatched Villagers",
+  "Master of the Feast", "Pippin the Hunchback", "Celtic Impulse",
+  "Adventures in Adventureland", "Fiddles McGinty", "Minstrel Guild".
+  Licensed under Creative Commons: By Attribution 4.0 License
   (http://creativecommons.org/licenses/by/4.0/).
 Sound: "Talking Synthesizer" by tcarisland (CC-BY-SA 4.0);
   Additional assets CC-By 4.0 GDQuest (https://www.gdquest.com/);
