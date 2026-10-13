@@ -5,7 +5,8 @@ Developer:        Trojan Bulldog (solo)
 Game:             Shivaliva
 Genre:            Single-player puzzle-skill adventure among floating sky-islands.
                   A spiritual successor to Puzzle Pirates.
-Status:           Public demo, in active development. Public on itch.io since
+Status:           Public Beta Demo (a sandbox, no ending); the full game is in
+                  active development. Public on itch.io since
                   June 2026; versioned builds from 16 July 2026 (v0.1.0).
 Current version:  v2.0.7-alpha (11 October 2026)
 Platform:         Windows (PC)
@@ -22,13 +23,14 @@ Go on a space adventure, build relationships, and play mini-games along the way.
 Every job, card table and ship's station is its own mini-game, and so is every
 fight.
 
-THE DEMO
+THE BETA DEMO
 You start on Cradle Rock with nothing. Take jobs that are each their own
 mini-game, play the tavern's tables and climb the five-rung Cradle Gym ladder.
 Then cross the sky to Driftspar, where the Labyrinth, the first of the Ordeals,
 waits. Sign on with the ferry's crew, or buy a ship at the sky dock and hire
 your own: every duty station aboard is another mini-game, and a voyage can end
-in a battle in the sky and a boarding.
+in a battle in the sky and a boarding. Buy a lot and the shipwright builds you
+a house. Nothing ends: keep playing for as long as you like.
 
 Twelve mini-games. On the island: Mining, Coin Drop, Lumberjacking, Dish Duty,
 Skirmish, Poker. On the ship: Stoking, Navigation, Gunnery, Carpentry, Venting.
