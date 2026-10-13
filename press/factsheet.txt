@@ -8,10 +8,10 @@ Genre:            Single-player puzzle-skill adventure among floating sky-island
 Status:           Public Beta Demo (a sandbox, no ending); the full game is in
                   active development. Public on itch.io since
                   June 2026; versioned builds from 16 July 2026 (v0.1.0).
-Current version:  v2.0.7-alpha (11 October 2026)
+Current version:  v0.0.0-beta (13 October 2026)
 Platform:         Windows (PC)
 Price:            Free, name your price
-Download size:    About 432 MB
+Download size:    About 437 MB
 Engine:           Godot 4.7
 Download:         https://tairoyzone.itch.io/shivaliva-shanty
 Social:           https://x.com/trojanatoplat  (@trojanatoplat)
