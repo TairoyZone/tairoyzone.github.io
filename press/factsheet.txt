@@ -11,7 +11,7 @@ Status:           Public Beta Demo (a sandbox, no ending); the full game is in
 Current version:  v0.0.2-beta (15 October 2026)
 Platform:         Windows (PC)
 Price:            Free, name your price
-Download size:    About 420 MB
+Download size:    About 421 MB
 Engine:           Godot 4.7
 Download:         https://tairoyzone.itch.io/shivaliva-shanty
 Social:           https://x.com/trojanatoplat  (@trojanatoplat)
