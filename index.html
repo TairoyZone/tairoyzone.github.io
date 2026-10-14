@@ -184,7 +184,7 @@ a.shot:hover img { transform: scale(1.04); }
       </div>
       <ul class="facts rise" style="--d:420" aria-label="At a glance">
         <li><b>Free</b>, name your price</li>
-        <li>Windows, <b>438 MB</b></li>
+        <li>Windows, <b>418 MB</b></li>
         <li>Version <b>0.0.1-beta</b></li>
         <li>Godot <b>4.7</b></li>
       </ul>
@@ -412,7 +412,8 @@ a.shot:hover img { transform: scale(1.04); }
 <!-- GET IT. Re-check Size and Version against build/Shivaliva_windows.zip on EVERY export, alongside the version bump.
      THE VERSION IS IN SIX PLACES: the JSON-LD softwareVersion in <head>, the hero facts, the facts below, the footer's sheet,
      and twice in press/index.html (plus press/factsheet.txt). Grep the old number, do not hand-pick.
-     Size is DECIMAL MB (bytes / 1e6), what a browser and itch report; export_release.ps1 prints MiB and reads ~6 MB smaller. -->
+     Size is the number itch's download list shows for it: itch and Chrome count MiB (bytes / 1,048,576), so 437,585,076
+     bytes read 418 MB on itch and 417 in Chrome's bar. Decimal MB (bytes / 1e6) said 438, 20 MB off what players see. -->
 <section id="get" class="get">
   <div class="wrap reveal">
     <h2>Free on itch, for Windows</h2>
@@ -423,7 +424,7 @@ a.shot:hover img { transform: scale(1.04); }
     </div>
     <ul class="facts" aria-label="File facts">
       <li>Windows zip</li>
-      <li><b>438 MB</b></li>
+      <li><b>418 MB</b></li>
       <li>Version <b>0.0.1-beta</b></li>
       <li>Name your own price</li>
     </ul>
