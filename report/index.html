@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Report a bug. Shivaliva</title>
+<meta name="description" content="Found a bug in Shivaliva? Tell us what happened by email, with your version and the game's log file.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://play.shivalivaleveling.com/report/">
+<meta property="og:title" content="Report a bug in Shivaliva">
+<meta property="og:description" content="Found a bug? Tell us what happened by email, with your version and the game's log file.">
+<meta property="og:image" content="https://play.shivalivaleveling.com/assets/social_card_v6.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://play.shivalivaleveling.com/report/">
+<link rel="icon" href="../assets/icon_32.png" sizes="32x32" type="image/png">
+<meta name="theme-color" content="#F8F5EE">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@600;700&family=Source+Sans+3:ital,wght@0,400;0,600;1,400&display=swap">
+<link rel="stylesheet" href="../assets/site.css">
+<style>
+/* The game's pause menu opens this page as /report/?v=<version>, so the build a report is about names itself. */
+.report-hero { padding-block: clamp(36px, 7vw, 72px) clamp(20px, 4vw, 36px);
+  background: radial-gradient(900px 420px at 50% 0%, #E2EDF9 0%, rgba(226, 237, 249, 0) 70%); }
+.report-hero h1 { font-size: clamp(2rem, 5vw, 3rem); line-height: 1.1; text-wrap: balance; }
+.report-hero .lead { max-width: 62ch; margin-top: 12px; }
+.build { display: inline-flex; align-items: center; gap: 10px; margin-top: 18px; padding: 8px 14px; border: 1px solid var(--line-2);
+  background: var(--white); font: 600 0.95rem/1.2 var(--font-body); color: var(--ink); }
+.build b { font-family: var(--font-display); letter-spacing: 0.04em; color: var(--gem-deep); }
+.ways { display: grid; max-width: 640px; margin-block: 8px 34px; }
+.ways > .frame { min-width: 0; display: grid; }
+.frame > .in.way { padding: 22px 22px 20px; background: var(--white); display: grid; gap: 10px; align-content: start; }
+.way h2 { font-size: 1.25rem; display: flex; align-items: center; gap: 10px; }
+.way p { color: var(--ink-2); }
+.way .addr { font: 600 1rem/1.3 var(--font-body); color: var(--ink); user-select: all; overflow-wrap: anywhere; }
+.steps { display: grid; gap: 10px; padding-left: 1.3em; max-width: 72ch; color: var(--ink-2); }
+.steps strong { color: var(--ink); }
+.steps code, .tip code { font: 600 0.92rem/1.4 Consolas, "Cascadia Mono", monospace; background: var(--paper-2); padding: 1px 6px;
+  overflow-wrap: anywhere; }
+.section-title { font-size: 1.5rem; display: flex; align-items: center; gap: 10px; margin-block: 10px 14px; }
+.template { display: grid; gap: 10px; max-width: 760px; margin-block: 8px 40px; }
+.template textarea { width: 100%; min-height: 15em; resize: vertical; padding: 14px; border: 1px solid var(--line-2);
+  background: var(--white); color: var(--ink); font: 400 0.98rem/1.5 var(--font-body); }
+.template .btn-row { gap: 10px; }
+.copied { color: var(--leaf); font-weight: 600; align-self: center; }
+.tip { color: var(--ink-3); max-width: 72ch; }
+.report-foot { padding-block: 28px 44px; color: var(--ink-3); border-top: 1px solid var(--line); }
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="../" aria-label="Shivaliva, the site"><img src="../assets/icon_256.png" alt="" width="34" height="34"><span>Shivaliva</span></a>
+    <nav class="nav" aria-label="Site">
+      <a href="../#games">Mini-games</a>
+      <a href="../guide/">How to play</a>
+      <a href="../press/">Press kit</a>
+    </nav>
+    <a class="btn btn-gem" href="https://tairoyzone.itch.io/shivaliva-shanty">Download free</a>
+  </div>
+</header>
+
+<section class="report-hero" aria-label="Report a bug">
+  <div class="wrap">
+    <h1>Report a bug</h1>
+    <p class="lead">Something broke, stuck or looked wrong? Tell me what happened and I will fix it. Every report is read by
+    the one person who makes the game.</p>
+    <p class="build" id="build" hidden>Your build: <b id="build-v"></b></p>
+  </div>
+</section>
+
+<main class="wrap">
+  <div class="ways">
+    <section class="frame"><div class="in way">
+      <h2><span class="gem" aria-hidden="true"></span>By email</h2>
+      <p>Copy the report below into an email, attach a screenshot and your log file, and send it to:</p>
+      <p class="addr">tairoy.zone@gmail.com</p>
+      <div class="btn-row"><a class="btn btn-gem" id="mail" href="mailto:tairoy.zone@gmail.com?subject=Shivaliva%20bug%20report"><span class="gem" aria-hidden="true"></span>Write the email</a></div>
+    </div></section>
+  </div>
+
+  <h2 class="section-title"><span class="gem" aria-hidden="true"></span>What helps me fix it</h2>
+  <ol class="steps">
+    <li><strong>What happened,</strong> and what you expected to happen instead.</li>
+    <li><strong>Where you were and what you were doing:</strong> the island or the ship, the mini-game, the person you were
+    talking to, the last thing you clicked.</li>
+    <li><strong>Can you make it happen again?</strong> If you can, the steps that do it.</li>
+    <li><strong>Your version.</strong> It is printed in the corner of the title screen (and above, when you came from the
+    game's pause menu).</li>
+    <li><strong>A screenshot or a short clip,</strong> if you have one.</li>
+    <li><strong>The game's log file.</strong> Paste <code>%APPDATA%\Shivaliva\logs</code> into the address bar of File
+    Explorer and attach <code>godot.log</code>. Send it soon after the bug: the game starts a new log each time it opens.</li>
+  </ol>
+
+  <h2 class="section-title" style="margin-top:34px"><span class="gem" aria-hidden="true"></span>Your report</h2>
+  <div class="template">
+    <label for="report-text" class="tip">Fill this in, then copy it into your email.</label>
+    <textarea id="report-text" spellcheck="true">What happened:
+
+What I expected:
+
+Where I was and what I was doing:
+
+Can I make it happen again? How:
+
+Version:
+Windows version:
+</textarea>
+    <div class="btn-row"><button class="btn btn-gem" type="button" id="copy"><span class="gem" aria-hidden="true"></span>Copy the report</button><span class="copied" id="copied" hidden>Copied.</span></div>
+  </div>
+</main>
+
+<footer class="wrap report-foot">
+  <p><a href="../">Back to the site</a> &middot; <a href="../guide/">How to play</a> &middot; <a href="../press/">Press kit</a> &middot; <a href="../#credits">Credits</a></p>
+</footer>
+
+<script>
+(function () {
+  // the game's pause menu adds ?v=<version>; anything else is shown as plain text, never as markup
+  var v = "";
+  try { v = (new URLSearchParams(location.search).get("v") || "").slice(0, 40); } catch (e) {}
+  if (/^[0-9A-Za-z.+_ ()-]+$/.test(v)) {
+    document.getElementById("build-v").textContent = "v" + v.replace(/^v/, "");
+    document.getElementById("build").hidden = false;
+    var ta = document.getElementById("report-text");
+    ta.value = ta.value.replace("Version:\n", "Version: v" + v.replace(/^v/, "") + "\n");
+    var mail = document.getElementById("mail");
+    mail.href = "mailto:tairoy.zone@gmail.com?subject=" + encodeURIComponent("Shivaliva bug report (v" + v.replace(/^v/, "") + ")");
+  }
+  var btn = document.getElementById("copy"), done = document.getElementById("copied"), ta2 = document.getElementById("report-text");
+  btn.addEventListener("click", function () {
+    var shown = function () { done.hidden = false; setTimeout(function () { done.hidden = true; }, 2200); };
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(ta2.value).then(shown, function () { ta2.select(); });
+    } else { ta2.select(); }
+  });
+})();
+</script>
+<script src="../assets/site.js" defer></script>
+
+</body>
+</html>

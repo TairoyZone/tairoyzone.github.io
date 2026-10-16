@@ -7,7 +7,7 @@ Genre:            Single-player puzzle-skill adventure among floating sky-island
 Status:           Public Beta Demo (a sandbox, no ending); the full game is in
                   active development. Public on itch.io since
                   June 2026; versioned builds from 16 July 2026 (v0.1.0).
-Current version:  v0.0.2-beta (15 October 2026)
+Current version:  v0.0.6-beta (16 October 2026)
 Platform:         Windows (PC)
 Price:            Free, name your price
 Download size:    About 421 MB
