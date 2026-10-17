@@ -3,7 +3,8 @@ Press factsheet
 
 Developer:        Trojan Bulldog (solo)
 Game:             Shivaliva
-Genre:            Single-player puzzle-skill adventure among floating sky-islands.
+Genre:            Single-player life-sim where every job is a puzzle, on islands
+                  floating in space.
 Status:           Public Beta Demo (a sandbox, no ending); the full game is in
                   active development. Public on itch.io since
                   June 2026; versioned builds from 16 July 2026 (v0.1.0).
@@ -17,10 +18,10 @@ Social:           https://x.com/trojanatoplat  (@trojanatoplat)
 Developer page:   https://tairoyzone.itch.io
 
 SHORT DESCRIPTION
-Shivaliva is a single-player puzzle-skill adventure among floating sky-islands.
-Go on a space adventure, build relationships, and play mini-games along the way.
-Every job, card table and ship's station is its own mini-game, and so is every
-fight.
+Shivaliva is a single-player life-sim where every job is a puzzle. Live on a
+floating island in space, play well to earn gold, and spend it on new looks, a
+home or your own ship. Make friends, or more, with islanders who remember you,
+then sail the stars, where even the fights are puzzle duels.
 
 THE BETA DEMO
 You start on Cradle Rock with nothing. Take jobs that are each their own
