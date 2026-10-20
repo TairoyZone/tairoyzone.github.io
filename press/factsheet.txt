@@ -14,6 +14,7 @@ Price:            Free, name your price
 Download size:    About 421 MB
 Engine:           Godot 4.7
 Download:         https://tairoyzone.itch.io/shivaliva-shanty
+Steam:            https://store.steampowered.com/app/5370850/Shivaliva/?utm_source=presskit&utm_medium=web&utm_content=factsheet_txt  (Coming soon, wishlist open)
 Social:           https://x.com/trojanatoplat  (@trojanatoplat)
 Developer page:   https://tairoyzone.itch.io
 
