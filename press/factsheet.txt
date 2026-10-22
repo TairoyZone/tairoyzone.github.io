@@ -8,10 +8,10 @@ Genre:            Single-player life-sim where every job is a puzzle, on islands
 Status:           Public Beta Demo (a sandbox, no ending); the full game is in
                   active development. Public on itch.io since
                   June 2026; versioned builds from 16 July 2026 (v0.1.0).
-Current version:  v0.0.7-beta (18 October 2026)
+Current version:  v0.0.9-beta (22 October 2026)
 Platform:         Windows (PC)
 Price:            Free, name your price
-Download size:    About 421 MB
+Download size:    About 232 MB
 Engine:           Godot 4.7
 Download:         https://tairoyzone.itch.io/shivaliva-shanty
 Steam:            https://store.steampowered.com/app/5370850/Shivaliva/?utm_source=presskit&utm_medium=web&utm_content=factsheet_txt  (Coming soon, wishlist open)
@@ -40,8 +40,7 @@ currency, shop, backpack, chart. Islanders worth talking to: they remember what
 you did, know what is happening in the room, and pass word about you across the
 island. Befriend them, and court them if the feeling runs both ways.
 
-Conversations with islanders need a live internet connection. Everything else
-plays offline.
+The whole game plays offline.
 
 PLANNED
 Eight Ordeals, each on an island of its own with a master at the end, every one
