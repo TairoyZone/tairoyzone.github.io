@@ -8,10 +8,10 @@ Genre:            Single-player life-sim where every job is a puzzle, on islands
 Status:           Public Beta Demo (a sandbox, no ending); the full game is in
                   active development. Public on itch.io since
                   June 2026; versioned builds from 16 July 2026 (v0.1.0).
-Current version:  v0.0.10-beta (23 October 2026)
+Current version:  v1.0.0-beta (28 October 2026)
 Platform:         Windows (PC)
 Price:            Free, name your price
-Download size:    About 232 MB
+Download size:    About 244 MB
 Engine:           Godot 4.7
 Download:         https://tairoyzone.itch.io/shivaliva-shanty
 Steam:            https://store.steampowered.com/app/5370850/Shivaliva/?utm_source=presskit&utm_medium=web&utm_content=factsheet_txt  (Coming soon, wishlist open)
