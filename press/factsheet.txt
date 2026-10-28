@@ -81,9 +81,6 @@ Sound: "Talking Synthesizer" by tcarisland (CC-BY-SA 4.0);
   Kenney (https://kenney.nl, CC0); "Keyboard soundpack 1" by unicaegames (CC0);
   "Crunch sounds (cucumber)" by cogitollc (CC0);
   Universal Sound Effects packs (purchased licence).
-Voices: generated on the player's machine with sherpa-onnx (Apache-2.0) using
-  the Piper en_GB-vctk-medium voice model, trained on the CSTR VCTK Corpus
-  (University of Edinburgh), CC BY 4.0.
 
 CONTACT
 Email: tairoy.zone@gmail.com
